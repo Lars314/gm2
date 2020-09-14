@@ -1,0 +1,45 @@
+
+
+process_name : notBlinded
+
+source: {
+	module_type : EmptyEvent
+	maxEvents: 2
+}
+
+services: {
+	message: {
+		debugModules: ["*"]
+		suppressInfo: []
+		
+		destinations: {
+			LogToConsole: {
+				type: "cout"
+				threshold: "INFO"
+			}
+			LogToFile: {
+				type: "file"
+				filename: "notBlinded.log"
+				append: false
+				threshold: "INFO"
+			}
+		}
+	}
+} //end services
+
+
+physics: {
+	analyzers: {
+		blindTest: {
+			module_type: testblinder
+			blinded: false
+			blindingHash: "Chris eats at Two Brothers"
+		}
+	}
+	
+	pathMake: [blindTest]
+	end_paths: [pathMake]
+	
+} //end physics
+
+

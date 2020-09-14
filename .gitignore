@@ -1,1 +1,7 @@
 *.root
+*.data
+*.png
+*.so
+*.gif
+pileup_ml/tempate_data/
+y_position/YMeanSummaries/better data/
