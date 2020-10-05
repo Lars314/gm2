@@ -1,0 +1,7857 @@
+BEGIN_PROLOG
+
+pedestalConstantsLaserRun3: {
+  // run information
+  run: [30313, 30314, 30315, 30316, 30317, 30318, 30319, 30320, 30321, 30322, 30323, 30324, 30325, 30326, 30327, 30328, 30329, 30330, 30331, 30332, 30333, 30334, 30335, 30336, 30337, 30338, 30339, 30340, 30341, 30342, 30343, 30344, 30345, 30346, 30347, 30348, 30349, 30350, 30351, 30352, 30353, 30354, 30355, 30356, 30357, 30358, 30359, 30360, 30361, 30362, 30363]
+
+  // calorimeter1
+  calo1 : {
+    xtal0 : {
+      noiseLevel  : 3.64516
+      pedestalOffset: 3.07218
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.75734
+      pedestalOffset: -4.59314
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 6.2825
+      pedestalOffset: 0.456682
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 4.2185
+      pedestalOffset: -1.21417
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 5.90498
+      pedestalOffset: 1.24826
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.46789
+      pedestalOffset: -1.83732
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.64471
+      pedestalOffset: -0.122188
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.33792
+      pedestalOffset: 1.82071
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 5.0094
+      pedestalOffset: 3.15636
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.51007
+      pedestalOffset: 0.0558436
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.65698
+      pedestalOffset: -1.17384
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.73055
+      pedestalOffset: 2.86683
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.3705
+      pedestalOffset: -3.79633
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.24285
+      pedestalOffset: -4.1103
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.19687
+      pedestalOffset: -2.35782
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.26036
+      pedestalOffset: 2.40522
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.414
+      pedestalOffset: -1.31621
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.25073
+      pedestalOffset: 1.65994
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 4.31434
+      pedestalOffset: -1.54666
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 6.03501
+      pedestalOffset: -3.76969
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.84073
+      pedestalOffset: -0.814577
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.70827
+      pedestalOffset: -4.12331
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.42176
+      pedestalOffset: -2.82467
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 5.41412
+      pedestalOffset: -4.55386
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.77919
+      pedestalOffset: -6.61741
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.55284
+      pedestalOffset: 2.63045
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.20261
+      pedestalOffset: -0.470181
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.23037
+      pedestalOffset: -2.06646
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.14622
+      pedestalOffset: -2.98026
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.46847
+      pedestalOffset: -0.771051
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.64419
+      pedestalOffset: -3.39189
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.85486
+      pedestalOffset: 0.550081
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.89765
+      pedestalOffset: -3.14101
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.33245
+      pedestalOffset: 0.783583
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.87796
+      pedestalOffset: 1.56374
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 8.3583
+      pedestalOffset: 1.84251
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.06296
+      pedestalOffset: 1.33386
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.29343
+      pedestalOffset: -1.93898
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 2.98172
+      pedestalOffset: -0.544581
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.42415
+      pedestalOffset: -2.51368
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.6549
+      pedestalOffset: -1.71694
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 6.86878
+      pedestalOffset: -3.4759
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.95495
+      pedestalOffset: -2.23322
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.71326
+      pedestalOffset: -1.33592
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.47936
+      pedestalOffset: 4.72676
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.08795
+      pedestalOffset: -0.479809
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 2.83994
+      pedestalOffset: -0.839986
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.48098
+      pedestalOffset: -6.1276
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.24379
+      pedestalOffset: -1.07347
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.47759
+      pedestalOffset: 3.81618
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.8127
+      pedestalOffset: -2.1823
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 5.39688
+      pedestalOffset: 4.1477
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.67677
+      pedestalOffset: -2.61858
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 5.15637
+      pedestalOffset: -1.29703
+    }
+
+
+  }
+  // calorimeter2
+  calo2 : {
+    xtal0 : {
+      noiseLevel  : 4.93621
+      pedestalOffset: 1.4727
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.07511
+      pedestalOffset: -1.07142
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.44675
+      pedestalOffset: -2.11743
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 4.10439
+      pedestalOffset: 3.73919
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.40652
+      pedestalOffset: -3.18326
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.53029
+      pedestalOffset: -0.874605
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.37076
+      pedestalOffset: -0.559038
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.92197
+      pedestalOffset: 0.758007
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 8.56538
+      pedestalOffset: 0.710478
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.13823
+      pedestalOffset: 0.218515
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.05229
+      pedestalOffset: 2.87845
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.1702
+      pedestalOffset: -2.18439
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.71031
+      pedestalOffset: -0.621668
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.01999
+      pedestalOffset: -0.405931
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 5.93622
+      pedestalOffset: -0.504671
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 4.18752
+      pedestalOffset: -3.39951
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 4.31597
+      pedestalOffset: 2.06475
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 5.04705
+      pedestalOffset: -0.734022
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 4.14002
+      pedestalOffset: 2.96399
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 4.6748
+      pedestalOffset: 2.18397
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.22355
+      pedestalOffset: -5.26797
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 5.15178
+      pedestalOffset: 2.75283
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.73031
+      pedestalOffset: -0.479064
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.32796
+      pedestalOffset: 1.03158
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 5.84424
+      pedestalOffset: -5.75909
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 6.27455
+      pedestalOffset: 5.27993
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.95959
+      pedestalOffset: -4.22936
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 4.07359
+      pedestalOffset: 1.23182
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 4.83396
+      pedestalOffset: -3.52064
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 4.91457
+      pedestalOffset: -0.120791
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.93803
+      pedestalOffset: 1.69769
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.86859
+      pedestalOffset: -3.20724
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.08877
+      pedestalOffset: 0.830695
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.40435
+      pedestalOffset: -0.878478
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.26865
+      pedestalOffset: -0.875633
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.82999
+      pedestalOffset: 3.08888
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 4.62961
+      pedestalOffset: 1.94723
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.77165
+      pedestalOffset: 2.39323
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.15195
+      pedestalOffset: -1.2301
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.26269
+      pedestalOffset: 1.13876
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 5.6153
+      pedestalOffset: 2.90522
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 5.3172
+      pedestalOffset: 2.96343
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.75926
+      pedestalOffset: -1.61586
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 6.82378
+      pedestalOffset: 1.51331
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.81501
+      pedestalOffset: -3.81952
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.01672
+      pedestalOffset: -0.417838
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 6.33018
+      pedestalOffset: 1.77434
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.28503
+      pedestalOffset: 2.29164
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.19512
+      pedestalOffset: -2.23814
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.01624
+      pedestalOffset: -7.18196
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.57139
+      pedestalOffset: -2.91612
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 5.74342
+      pedestalOffset: -4.36328
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.20297
+      pedestalOffset: -1.7199
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.41632
+      pedestalOffset: -1.77285
+    }
+
+
+  }
+  // calorimeter3
+  calo3 : {
+    xtal0 : {
+      noiseLevel  : 3.96399
+      pedestalOffset: -1.61309
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.77002
+      pedestalOffset: 4.76325
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.76665
+      pedestalOffset: -2.68688
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 7.67409
+      pedestalOffset: 1.12432
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.80686
+      pedestalOffset: -5.1936
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 5.529
+      pedestalOffset: -1.09777
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.95659
+      pedestalOffset: 4.44094
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.68721
+      pedestalOffset: 3.22991
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 3.94811
+      pedestalOffset: -2.32984
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.15845
+      pedestalOffset: -2.40285
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 4.28937
+      pedestalOffset: -1.21687
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.68443
+      pedestalOffset: -5.72618
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 4.5089
+      pedestalOffset: -6.94869
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.83442
+      pedestalOffset: -1.236
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.35671
+      pedestalOffset: 0.194688
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.79332
+      pedestalOffset: 1.97984
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.67846
+      pedestalOffset: -1.3937
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 6.87055
+      pedestalOffset: -0.435858
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 4.07652
+      pedestalOffset: -3.24447
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 6.45188
+      pedestalOffset: -4.67805
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.66162
+      pedestalOffset: -0.540782
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.55317
+      pedestalOffset: 2.36223
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.82027
+      pedestalOffset: 0.0213834
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.97439
+      pedestalOffset: 0.344759
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.54361
+      pedestalOffset: 2.7226
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.68515
+      pedestalOffset: -0.16552
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 4.62018
+      pedestalOffset: -6.4512
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 2.90777
+      pedestalOffset: -2.21044
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.95142
+      pedestalOffset: 1.5813
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.81216
+      pedestalOffset: -2.99164
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.57497
+      pedestalOffset: -4.80296
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.81649
+      pedestalOffset: -1.65949
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.99728
+      pedestalOffset: 0.472608
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.88672
+      pedestalOffset: 1.95262
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 5.2426
+      pedestalOffset: -2.91702
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 4.70566
+      pedestalOffset: 0.143798
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.05246
+      pedestalOffset: -2.44605
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.82442
+      pedestalOffset: -2.1785
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.96417
+      pedestalOffset: -4.26814
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 4.01798
+      pedestalOffset: -0.312456
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.31047
+      pedestalOffset: 0.264532
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 10.7596
+      pedestalOffset: 0.997107
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 4.20405
+      pedestalOffset: 3.16041
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.97763
+      pedestalOffset: -1.1756
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 6.29572
+      pedestalOffset: -1.02021
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.26438
+      pedestalOffset: -0.689545
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.72853
+      pedestalOffset: -4.9246
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.71217
+      pedestalOffset: -1.18225
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 4.75831
+      pedestalOffset: 0.673826
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 5.71747
+      pedestalOffset: -2.5052
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 5.67587
+      pedestalOffset: -6.69722
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.75004
+      pedestalOffset: -0.39486
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.74747
+      pedestalOffset: -1.71092
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 3.7066
+      pedestalOffset: -2.97269
+    }
+
+
+  }
+  // calorimeter4
+  calo4 : {
+    xtal0 : {
+      noiseLevel  : 3.83599
+      pedestalOffset: 1.52455
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.12377
+      pedestalOffset: -2.29182
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.27244
+      pedestalOffset: 0.941923
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.8123
+      pedestalOffset: -0.0882376
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.67048
+      pedestalOffset: -0.276151
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.9965
+      pedestalOffset: 0.743658
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.37395
+      pedestalOffset: -2.31661
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 7.51264
+      pedestalOffset: -1.45718
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.00296
+      pedestalOffset: -3.42223
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 2.91376
+      pedestalOffset: 2.90845
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 4.06513
+      pedestalOffset: -3.98814
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.32102
+      pedestalOffset: 4.42336
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.94827
+      pedestalOffset: 0.0906974
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 6.32103
+      pedestalOffset: 0.234216
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.83332
+      pedestalOffset: -0.760081
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.71601
+      pedestalOffset: -0.714802
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.95723
+      pedestalOffset: 0.215391
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.89186
+      pedestalOffset: 5.39817
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 5.13947
+      pedestalOffset: 3.41401
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.80603
+      pedestalOffset: -2.03525
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.73225
+      pedestalOffset: -1.39273
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.03492
+      pedestalOffset: 2.37313
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.42933
+      pedestalOffset: 2.52024
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.71139
+      pedestalOffset: 1.89592
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.00157
+      pedestalOffset: 2.75886
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.78837
+      pedestalOffset: -2.88204
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.39169
+      pedestalOffset: -0.873391
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.12544
+      pedestalOffset: 0.318702
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 4.94043
+      pedestalOffset: 1.99793
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.5509
+      pedestalOffset: 0.858748
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 5.04861
+      pedestalOffset: 3.68153
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.59393
+      pedestalOffset: -2.21602
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 5.31394
+      pedestalOffset: -1.90643
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 5.40702
+      pedestalOffset: -0.253753
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.38501
+      pedestalOffset: -2.0806
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.84727
+      pedestalOffset: 2.00563
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.73039
+      pedestalOffset: 1.64018
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.19688
+      pedestalOffset: -1.10377
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.21747
+      pedestalOffset: 0.127708
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 4.8637
+      pedestalOffset: -0.304672
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.78365
+      pedestalOffset: 2.1495
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 4.23611
+      pedestalOffset: -6.98629
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 4.28364
+      pedestalOffset: 0.569384
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.28509
+      pedestalOffset: -1.49434
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.28381
+      pedestalOffset: -3.88294
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.25631
+      pedestalOffset: 2.28037
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.34261
+      pedestalOffset: 0.372352
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 5.24829
+      pedestalOffset: -3.8877
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.89706
+      pedestalOffset: 3.00884
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.34184
+      pedestalOffset: -3.14299
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 6.69176
+      pedestalOffset: 0.0945616
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.91975
+      pedestalOffset: -5.11615
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.47918
+      pedestalOffset: -5.74164
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.85166
+      pedestalOffset: -2.03057
+    }
+
+
+  }
+  // calorimeter5
+  calo5 : {
+    xtal0 : {
+      noiseLevel  : 3.68418
+      pedestalOffset: -1.59061
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.06448
+      pedestalOffset: -1.77046
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.54208
+      pedestalOffset: -2.72018
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.36245
+      pedestalOffset: 1.20341
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.5865
+      pedestalOffset: -0.322011
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.01951
+      pedestalOffset: 1.41305
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.7969
+      pedestalOffset: 0.917705
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.802
+      pedestalOffset: -3.18114
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 5.10724
+      pedestalOffset: 4.59315
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 5.02436
+      pedestalOffset: -8.14207
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.75791
+      pedestalOffset: -1.04554
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 7.20724
+      pedestalOffset: -2.32318
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.87887
+      pedestalOffset: 2.35217
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.3146
+      pedestalOffset: -0.448246
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.59566
+      pedestalOffset: -3.94539
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 4.13556
+      pedestalOffset: -1.0976
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.81966
+      pedestalOffset: -0.285868
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.62755
+      pedestalOffset: 4.78634
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.00395
+      pedestalOffset: 0.0733247
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 2.93616
+      pedestalOffset: -2.11122
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.45547
+      pedestalOffset: -2.07867
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.00132
+      pedestalOffset: -1.19492
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.69302
+      pedestalOffset: 4.70551
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.14271
+      pedestalOffset: -2.72582
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.18687
+      pedestalOffset: 0.623377
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 6.75715
+      pedestalOffset: 0.062845
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 4.1224
+      pedestalOffset: 1.07434
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 2.84348
+      pedestalOffset: 0.322015
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 4.65956
+      pedestalOffset: -5.37791
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.13161
+      pedestalOffset: 0.0221345
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.7149
+      pedestalOffset: 1.64695
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.39611
+      pedestalOffset: -2.96449
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.63861
+      pedestalOffset: -2.98821
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 5.75375
+      pedestalOffset: 1.2838
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.97651
+      pedestalOffset: -3.57355
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 5.12644
+      pedestalOffset: -1.07654
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 2.88441
+      pedestalOffset: -1.93022
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 4.79089
+      pedestalOffset: 1.11344
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.07036
+      pedestalOffset: -1.2681
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 4.07909
+      pedestalOffset: -1.5176
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 5.88552
+      pedestalOffset: 2.42522
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 5.02386
+      pedestalOffset: 0.677575
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 5.41999
+      pedestalOffset: 5.63016
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.57763
+      pedestalOffset: -2.7085
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.78423
+      pedestalOffset: 2.41806
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.12953
+      pedestalOffset: -2.20714
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.39556
+      pedestalOffset: 1.50688
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.25896
+      pedestalOffset: -2.38158
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.74068
+      pedestalOffset: -0.892722
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.48334
+      pedestalOffset: -2.40864
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.66777
+      pedestalOffset: -0.89598
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.88882
+      pedestalOffset: -1.73515
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.37858
+      pedestalOffset: -2.48978
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 6.6229
+      pedestalOffset: -3.9616
+    }
+
+
+  }
+  // calorimeter6
+  calo6 : {
+    xtal0 : {
+      noiseLevel  : 3.56164
+      pedestalOffset: 0.431223
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.37715
+      pedestalOffset: -2.80734
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.61083
+      pedestalOffset: 2.96486
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 4.27068
+      pedestalOffset: -4.27284
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.45798
+      pedestalOffset: -2.11908
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 4.77777
+      pedestalOffset: 1.35081
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 5.50979
+      pedestalOffset: -0.848965
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 5.36166
+      pedestalOffset: -3.17816
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.73244
+      pedestalOffset: -1.23674
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.38384
+      pedestalOffset: -2.75288
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.61702
+      pedestalOffset: -0.489978
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 4.33087
+      pedestalOffset: 0.275624
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.78826
+      pedestalOffset: -0.417799
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.15946
+      pedestalOffset: -3.54529
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 4.03064
+      pedestalOffset: -1.98412
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 4.56856
+      pedestalOffset: -1.03842
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 5.78282
+      pedestalOffset: 3.99631
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 5.25651
+      pedestalOffset: -1.32504
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 5.37123
+      pedestalOffset: 0.224049
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.24636
+      pedestalOffset: 2.09821
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.96926
+      pedestalOffset: -3.07861
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.7987
+      pedestalOffset: -5.19894
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.9742
+      pedestalOffset: 0.612168
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.96539
+      pedestalOffset: 2.04654
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.66964
+      pedestalOffset: 0.280168
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 6.67155
+      pedestalOffset: 3.2346
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.47786
+      pedestalOffset: 0.25095
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.51931
+      pedestalOffset: -3.72525
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 5.13528
+      pedestalOffset: -0.96887
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.85633
+      pedestalOffset: -3.27644
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.23957
+      pedestalOffset: -2.19805
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 5.04554
+      pedestalOffset: 1.40392
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.52309
+      pedestalOffset: -0.666398
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 6.01332
+      pedestalOffset: -0.819319
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 6.42206
+      pedestalOffset: -1.78388
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 5.75509
+      pedestalOffset: -1.89779
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 4.00278
+      pedestalOffset: -2.05236
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.33598
+      pedestalOffset: -2.93793
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.63168
+      pedestalOffset: 1.99149
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.62094
+      pedestalOffset: -0.205234
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 5.27872
+      pedestalOffset: -0.448877
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 4.72764
+      pedestalOffset: 0.579367
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 6.15116
+      pedestalOffset: 1.3223
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 7.34152
+      pedestalOffset: -0.732547
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 10.0432
+      pedestalOffset: -0.374427
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 4.25192
+      pedestalOffset: 4.37266
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 6.84761
+      pedestalOffset: -3.23555
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.74233
+      pedestalOffset: 2.89304
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 4.15677
+      pedestalOffset: -1.71379
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.77056
+      pedestalOffset: -3.41701
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.97459
+      pedestalOffset: 0.665011
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 8.08919
+      pedestalOffset: 3.64636
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 5.19019
+      pedestalOffset: -4.20273
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.9939
+      pedestalOffset: 0.278607
+    }
+
+
+  }
+  // calorimeter7
+  calo7 : {
+    xtal0 : {
+      noiseLevel  : 7.7463
+      pedestalOffset: -1.89908
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.42891
+      pedestalOffset: 0.417266
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.46366
+      pedestalOffset: 2.82675
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.53574
+      pedestalOffset: 2.10488
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.30934
+      pedestalOffset: -1.68248
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.96363
+      pedestalOffset: 0.00261238
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.96564
+      pedestalOffset: 2.79333
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.2393
+      pedestalOffset: 0.616973
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 5.12672
+      pedestalOffset: -3.82904
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.61733
+      pedestalOffset: -3.90945
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.59013
+      pedestalOffset: -0.275457
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.34384
+      pedestalOffset: 1.79224
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.53178
+      pedestalOffset: -1.57959
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.61708
+      pedestalOffset: -1.42347
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 5.15606
+      pedestalOffset: 0.392639
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 4.09589
+      pedestalOffset: -4.09345
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 6.53387
+      pedestalOffset: 1.4956
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 5.30901
+      pedestalOffset: -1.77669
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 7.07572
+      pedestalOffset: -0.152459
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.52352
+      pedestalOffset: 5.39528
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.20456
+      pedestalOffset: 0.436741
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.77282
+      pedestalOffset: 1.80875
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.54418
+      pedestalOffset: 4.53923
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.16677
+      pedestalOffset: 2.74407
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.48248
+      pedestalOffset: -4.05911
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 6.36193
+      pedestalOffset: -0.39046
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 7.22066
+      pedestalOffset: 1.23482
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 2.99507
+      pedestalOffset: 0.649335
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.57299
+      pedestalOffset: 0.336833
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.44452
+      pedestalOffset: 3.91773
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.22137
+      pedestalOffset: -4.74414
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.94358
+      pedestalOffset: 1.61752
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.8619
+      pedestalOffset: 0.364736
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 9.26343
+      pedestalOffset: -3.47099
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 5.38434
+      pedestalOffset: -0.833556
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 6.80945
+      pedestalOffset: 0.151651
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.47942
+      pedestalOffset: -3.71826
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.6471
+      pedestalOffset: 0.273152
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.94855
+      pedestalOffset: 0.0960678
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.74675
+      pedestalOffset: -1.71154
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.56762
+      pedestalOffset: -0.0085964
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.68911
+      pedestalOffset: 3.84087
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 4.99479
+      pedestalOffset: -4.48595
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 6.05576
+      pedestalOffset: -2.41975
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.76843
+      pedestalOffset: 0.90681
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.05137
+      pedestalOffset: 1.39823
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.024
+      pedestalOffset: 3.02279
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.66198
+      pedestalOffset: -4.63743
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.57122
+      pedestalOffset: 0.217908
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.02769
+      pedestalOffset: 1.39385
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 4.59939
+      pedestalOffset: 3.76024
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 7.94225
+      pedestalOffset: 0.709604
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 7.93749
+      pedestalOffset: -4.15369
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 7.00328
+      pedestalOffset: 2.6722
+    }
+
+
+  }
+  // calorimeter8
+  calo8 : {
+    xtal0 : {
+      noiseLevel  : 4.28182
+      pedestalOffset: -1.23277
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.67181
+      pedestalOffset: -3.67777
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.13055
+      pedestalOffset: 0.114682
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 5.18155
+      pedestalOffset: 1.62012
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.8154
+      pedestalOffset: 2.31026
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 5.96865
+      pedestalOffset: 0.910128
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.38509
+      pedestalOffset: 2.6069
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 7.81092
+      pedestalOffset: 0.662647
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 8.66599
+      pedestalOffset: -2.28643
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.19814
+      pedestalOffset: -4.31197
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 4.44873
+      pedestalOffset: -1.10062
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.52824
+      pedestalOffset: 1.48422
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 4.5609
+      pedestalOffset: 5.92214
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.43568
+      pedestalOffset: 0.441364
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 8.44073
+      pedestalOffset: -1.63607
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 5.98606
+      pedestalOffset: -2.59118
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 5.84991
+      pedestalOffset: 1.18524
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 7.81419
+      pedestalOffset: -2.00136
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 4.98205
+      pedestalOffset: -5.1542
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 4.92433
+      pedestalOffset: -1.63761
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 5.30987
+      pedestalOffset: -2.33288
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.07067
+      pedestalOffset: -2.28409
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 8.03981
+      pedestalOffset: 0.599199
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 6.15732
+      pedestalOffset: 3.28259
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 6.57483
+      pedestalOffset: 1.96938
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 5.60379
+      pedestalOffset: 3.40139
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.93513
+      pedestalOffset: -1.68497
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 5.09975
+      pedestalOffset: -1.89285
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 4.34952
+      pedestalOffset: -3.84947
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 8.81082
+      pedestalOffset: 3.0126
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.41741
+      pedestalOffset: 2.42207
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.194
+      pedestalOffset: 0.0587793
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 5.70081
+      pedestalOffset: 0.966328
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 5.15537
+      pedestalOffset: 0.512379
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 6.05323
+      pedestalOffset: 2.16654
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 5.12087
+      pedestalOffset: -3.67006
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 5.63971
+      pedestalOffset: -0.549601
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 8.25738
+      pedestalOffset: -2.1444
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.46651
+      pedestalOffset: 1.56193
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 9.14908
+      pedestalOffset: 2.65018
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.53966
+      pedestalOffset: -1.20853
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 6.58684
+      pedestalOffset: 1.40226
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 5.44352
+      pedestalOffset: -2.22823
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 5.36669
+      pedestalOffset: -0.512949
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.74663
+      pedestalOffset: -0.977216
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 4.46594
+      pedestalOffset: 0.336012
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.35233
+      pedestalOffset: -1.57565
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 7.48111
+      pedestalOffset: 3.43398
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 4.24657
+      pedestalOffset: 1.10407
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.8663
+      pedestalOffset: -3.14275
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 5.70943
+      pedestalOffset: -1.64328
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 6.4546
+      pedestalOffset: -3.45382
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 5.42685
+      pedestalOffset: -1.90353
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 11.1202
+      pedestalOffset: -1.87762
+    }
+
+
+  }
+  // calorimeter9
+  calo9 : {
+    xtal0 : {
+      noiseLevel  : 5.25335
+      pedestalOffset: -0.949434
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 6.9408
+      pedestalOffset: -0.81423
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 5.07887
+      pedestalOffset: 0.0413347
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.52106
+      pedestalOffset: -0.258118
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 9.99932
+      pedestalOffset: -1.76939
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.37699
+      pedestalOffset: 4.28822
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.73543
+      pedestalOffset: -2.85842
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 5.82845
+      pedestalOffset: 0.535879
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 7.9183
+      pedestalOffset: -4.66287
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.87797
+      pedestalOffset: 2.24512
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 5.70011
+      pedestalOffset: 1.84801
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.05434
+      pedestalOffset: -0.558761
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 7.24728
+      pedestalOffset: -1.78949
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.501
+      pedestalOffset: 3.3382
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.85889
+      pedestalOffset: 3.60107
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 5.3385
+      pedestalOffset: 4.50941
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.50684
+      pedestalOffset: -4.46006
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.9269
+      pedestalOffset: -2.62717
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.03276
+      pedestalOffset: -2.64345
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.80214
+      pedestalOffset: -5.62293
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.46016
+      pedestalOffset: -1.37065
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 5.31155
+      pedestalOffset: -2.97381
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.96826
+      pedestalOffset: 0.85639
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 7.46824
+      pedestalOffset: 0.969955
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.87642
+      pedestalOffset: -2.29091
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.51016
+      pedestalOffset: 3.22922
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.82989
+      pedestalOffset: -2.86904
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 4.33997
+      pedestalOffset: -4.28749
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 7.87787
+      pedestalOffset: -5.32594
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 4.98096
+      pedestalOffset: -0.0732136
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.58671
+      pedestalOffset: -0.782371
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.30285
+      pedestalOffset: 5.0372
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 12.0122
+      pedestalOffset: 0.246358
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 9.01762
+      pedestalOffset: 0.776539
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.44984
+      pedestalOffset: -3.47255
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 5.1171
+      pedestalOffset: 2.26194
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.30379
+      pedestalOffset: -2.86705
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 4.74899
+      pedestalOffset: -2.2116
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.33268
+      pedestalOffset: 2.61324
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.64864
+      pedestalOffset: -0.504594
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.92736
+      pedestalOffset: -3.58382
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 5.11637
+      pedestalOffset: 4.89666
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 5.68208
+      pedestalOffset: 0.192716
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 6.60248
+      pedestalOffset: -1.37008
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 6.13099
+      pedestalOffset: -2.8471
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 9.42834
+      pedestalOffset: -1.34769
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 5.96856
+      pedestalOffset: -3.74176
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 4.06673
+      pedestalOffset: 7.20639
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 6.09499
+      pedestalOffset: 0.241255
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 8.14049
+      pedestalOffset: -1.99043
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 5.98441
+      pedestalOffset: -6.24883
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 5.66416
+      pedestalOffset: 0.457891
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 7.32436
+      pedestalOffset: 1.02936
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.70402
+      pedestalOffset: -2.86761
+    }
+
+
+  }
+  // calorimeter10
+  calo10 : {
+    xtal0 : {
+      noiseLevel  : 3.3606
+      pedestalOffset: 1.36542
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 7.85903
+      pedestalOffset: -5.55518
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.4612
+      pedestalOffset: -3.5032
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 4.24327
+      pedestalOffset: -1.03728
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 5.15929
+      pedestalOffset: -3.69372
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 5.44272
+      pedestalOffset: -1.0378
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.29264
+      pedestalOffset: -1.53578
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 8.6679
+      pedestalOffset: -1.9235
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.6753
+      pedestalOffset: -2.43681
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.01893
+      pedestalOffset: -0.998614
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 4.48076
+      pedestalOffset: 0.0410748
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.75452
+      pedestalOffset: -3.26582
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.92926
+      pedestalOffset: -0.708933
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 5.93755
+      pedestalOffset: -3.35312
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 6.72213
+      pedestalOffset: -1.08244
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 7.65719
+      pedestalOffset: -4.37611
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 6.23698
+      pedestalOffset: 1.61228
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 5.02208
+      pedestalOffset: -3.47117
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.43573
+      pedestalOffset: 0.724788
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.91023
+      pedestalOffset: -5.921
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.85425
+      pedestalOffset: 0.888453
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.90712
+      pedestalOffset: -6.32317
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.56257
+      pedestalOffset: -4.30828
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.85536
+      pedestalOffset: -1.73695
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.34131
+      pedestalOffset: -0.861513
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.70825
+      pedestalOffset: -3.48058
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 7.27762
+      pedestalOffset: -5.03072
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 4.13056
+      pedestalOffset: 1.16475
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 6.00469
+      pedestalOffset: -0.215629
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 5.21951
+      pedestalOffset: -2.89137
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.40082
+      pedestalOffset: -1.11301
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.26711
+      pedestalOffset: -5.39805
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 5.19893
+      pedestalOffset: -0.389508
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 7.55398
+      pedestalOffset: -2.2842
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.59827
+      pedestalOffset: -3.64916
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 6.09724
+      pedestalOffset: 0.441884
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.64393
+      pedestalOffset: -1.91543
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.40264
+      pedestalOffset: -0.00471372
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.12986
+      pedestalOffset: 0.105693
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 4.09626
+      pedestalOffset: -0.527655
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.88312
+      pedestalOffset: 0.177992
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 7.48529
+      pedestalOffset: -2.05572
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 6.41481
+      pedestalOffset: -2.87992
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 8.27145
+      pedestalOffset: -2.04981
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.2091
+      pedestalOffset: -5.29937
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 4.38205
+      pedestalOffset: -0.72408
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 7.43095
+      pedestalOffset: -3.49745
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 8.73951
+      pedestalOffset: -2.59017
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 5.13101
+      pedestalOffset: -3.11681
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 5.22401
+      pedestalOffset: 1.62099
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 4.63855
+      pedestalOffset: -5.45804
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 5.74551
+      pedestalOffset: 1.84072
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 7.3209
+      pedestalOffset: 1.59682
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.52253
+      pedestalOffset: -4.13284
+    }
+
+
+  }
+  // calorimeter11
+  calo11 : {
+    xtal0 : {
+      noiseLevel  : 3.34454
+      pedestalOffset: 4.20922
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.23363
+      pedestalOffset: 0.144012
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.254
+      pedestalOffset: 3.3487
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.36403
+      pedestalOffset: -2.0077
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 5.43307
+      pedestalOffset: 0.629526
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.88095
+      pedestalOffset: -1.22633
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.58694
+      pedestalOffset: -1.41841
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.83623
+      pedestalOffset: -2.22479
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 3.32315
+      pedestalOffset: -1.77187
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.88206
+      pedestalOffset: 3.22084
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 4.11394
+      pedestalOffset: -0.368358
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.00509
+      pedestalOffset: -0.318521
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 4.75299
+      pedestalOffset: 0.0478201
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.92572
+      pedestalOffset: -1.26272
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 4.03348
+      pedestalOffset: -2.47835
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 6.66248
+      pedestalOffset: -2.95159
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 5.46456
+      pedestalOffset: -1.74722
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 5.7637
+      pedestalOffset: -1.29046
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 4.34772
+      pedestalOffset: 1.82525
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.89405
+      pedestalOffset: 0.172782
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.012
+      pedestalOffset: -4.7374
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.75285
+      pedestalOffset: -1.78885
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 7.0629
+      pedestalOffset: 0.39351
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 5.11654
+      pedestalOffset: -0.54065
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 5.05241
+      pedestalOffset: -1.71244
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.41676
+      pedestalOffset: -6.16199
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.89385
+      pedestalOffset: 0.143673
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.01343
+      pedestalOffset: -3.24964
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 4.28201
+      pedestalOffset: -3.82856
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.18736
+      pedestalOffset: -2.73154
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.37086
+      pedestalOffset: 2.69935
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.20531
+      pedestalOffset: 1.58346
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.49022
+      pedestalOffset: -2.68454
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.50635
+      pedestalOffset: 2.17361
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.43589
+      pedestalOffset: -0.624572
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 5.38878
+      pedestalOffset: -2.82798
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.51723
+      pedestalOffset: -4.28887
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.08047
+      pedestalOffset: -3.97018
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.11187
+      pedestalOffset: -0.0211839
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.74157
+      pedestalOffset: 1.41436
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.76871
+      pedestalOffset: -5.66948
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.2483
+      pedestalOffset: -4.05528
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 5.27764
+      pedestalOffset: 1.23222
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 5.71283
+      pedestalOffset: 0.595164
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 6.57993
+      pedestalOffset: -2.03816
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.27273
+      pedestalOffset: 2.2084
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.6713
+      pedestalOffset: 3.86036
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 5.33981
+      pedestalOffset: -1.95574
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.28116
+      pedestalOffset: 0.498118
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 5.07952
+      pedestalOffset: 1.30454
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 2.91866
+      pedestalOffset: 0.11213
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.66173
+      pedestalOffset: 2.51094
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.68079
+      pedestalOffset: 0.537787
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 5.22747
+      pedestalOffset: -1.21906
+    }
+
+
+  }
+  // calorimeter12
+  calo12 : {
+    xtal0 : {
+      noiseLevel  : 3.59736
+      pedestalOffset: -3.62118
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.68829
+      pedestalOffset: -0.202489
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.28246
+      pedestalOffset: 2.17196
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.09266
+      pedestalOffset: 1.59653
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 5.08685
+      pedestalOffset: 1.13095
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.69415
+      pedestalOffset: -1.78093
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.83785
+      pedestalOffset: -3.4105
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.74235
+      pedestalOffset: -3.68148
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 3.82823
+      pedestalOffset: -2.49339
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 2.99588
+      pedestalOffset: -5.00489
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.95504
+      pedestalOffset: -3.58971
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 2.91502
+      pedestalOffset: 0.15804
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 6.61388
+      pedestalOffset: -2.97884
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 5.01574
+      pedestalOffset: -1.12013
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.48402
+      pedestalOffset: -1.67668
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 4.53476
+      pedestalOffset: -1.9702
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.16033
+      pedestalOffset: -0.0789865
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.4317
+      pedestalOffset: -0.80037
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 2.86759
+      pedestalOffset: -5.45958
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.33664
+      pedestalOffset: -0.925257
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.30638
+      pedestalOffset: -2.2641
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.63249
+      pedestalOffset: -4.18369
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.22501
+      pedestalOffset: 2.15302
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.46994
+      pedestalOffset: 0.3492
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.27693
+      pedestalOffset: -1.00746
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.3221
+      pedestalOffset: -4.20451
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.87479
+      pedestalOffset: -4.2728
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.26834
+      pedestalOffset: -4.96741
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.12465
+      pedestalOffset: -4.93535
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.6368
+      pedestalOffset: -2.29275
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.07467
+      pedestalOffset: -1.02283
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.21715
+      pedestalOffset: -1.52253
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.79704
+      pedestalOffset: -1.93333
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.41038
+      pedestalOffset: -3.6486
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.63021
+      pedestalOffset: -0.0233566
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.25815
+      pedestalOffset: -1.3057
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.32916
+      pedestalOffset: -3.09332
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 2.87299
+      pedestalOffset: -1.45547
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.48877
+      pedestalOffset: -3.2082
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 5.32138
+      pedestalOffset: -0.596133
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.32734
+      pedestalOffset: 0.533706
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 5.46189
+      pedestalOffset: -3.48815
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 4.19915
+      pedestalOffset: -4.5128
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.51245
+      pedestalOffset: -0.195924
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.3384
+      pedestalOffset: -2.45396
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.05675
+      pedestalOffset: 1.09319
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 5.46215
+      pedestalOffset: -1.1224
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 4.58229
+      pedestalOffset: 0.561722
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.83549
+      pedestalOffset: -2.1793
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.07295
+      pedestalOffset: -0.0618904
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.37457
+      pedestalOffset: -0.583418
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.59659
+      pedestalOffset: -0.704842
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.45345
+      pedestalOffset: -4.06262
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 6.96916
+      pedestalOffset: 0.220885
+    }
+
+
+  }
+  // calorimeter13
+  calo13 : {
+    xtal0 : {
+      noiseLevel  : 4.69056
+      pedestalOffset: -1.41713
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.20965
+      pedestalOffset: 0.600622
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.59375
+      pedestalOffset: 8.87645
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.74861
+      pedestalOffset: -0.050013
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.18615
+      pedestalOffset: 1.87658
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 4.38515
+      pedestalOffset: 3.06662
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.94737
+      pedestalOffset: -0.382565
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 5.79092
+      pedestalOffset: -5.38778
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 3.16704
+      pedestalOffset: -2.13573
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.58579
+      pedestalOffset: 0.0485554
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.53286
+      pedestalOffset: 7.5094
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 5.06426
+      pedestalOffset: 6.23672
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.38161
+      pedestalOffset: -0.366695
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.35887
+      pedestalOffset: -2.50898
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.84875
+      pedestalOffset: -1.05248
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.73403
+      pedestalOffset: 0.524268
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.7959
+      pedestalOffset: -1.83861
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.88996
+      pedestalOffset: -2.28618
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.84769
+      pedestalOffset: 2.32465
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.35592
+      pedestalOffset: 0.331475
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.70647
+      pedestalOffset: -3.16741
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.20014
+      pedestalOffset: -2.3833
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.18701
+      pedestalOffset: -2.4126
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.34199
+      pedestalOffset: -2.66465
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.15666
+      pedestalOffset: -2.16586
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 5.30176
+      pedestalOffset: -3.48616
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 4.0113
+      pedestalOffset: -0.269649
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.50837
+      pedestalOffset: 2.84328
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.07391
+      pedestalOffset: -1.91618
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.51556
+      pedestalOffset: 0.11759
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.32895
+      pedestalOffset: -0.0972498
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.04697
+      pedestalOffset: -2.06983
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.25215
+      pedestalOffset: 1.16497
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.02762
+      pedestalOffset: -4.48771
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.04356
+      pedestalOffset: -1.51186
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 4.72056
+      pedestalOffset: 1.00856
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.46427
+      pedestalOffset: 0.532133
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 5.44724
+      pedestalOffset: -2.80775
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.36178
+      pedestalOffset: 4.2125
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 4.6688
+      pedestalOffset: -3.70195
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.18444
+      pedestalOffset: 1.45134
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.16557
+      pedestalOffset: 0.956709
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 4.34767
+      pedestalOffset: -3.78441
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.5513
+      pedestalOffset: -0.0547844
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.09677
+      pedestalOffset: 2.21989
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.14066
+      pedestalOffset: -1.27322
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 2.9527
+      pedestalOffset: -3.79842
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 4.16036
+      pedestalOffset: -0.570272
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.29646
+      pedestalOffset: -4.44856
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.6921
+      pedestalOffset: -1.9724
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 6.40545
+      pedestalOffset: 2.66753
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.32565
+      pedestalOffset: -0.714037
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.94836
+      pedestalOffset: -4.01328
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 5.02144
+      pedestalOffset: -2.80289
+    }
+
+
+  }
+  // calorimeter14
+  calo14 : {
+    xtal0 : {
+      noiseLevel  : 3.34922
+      pedestalOffset: 4.7473
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.61097
+      pedestalOffset: -3.19105
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.61069
+      pedestalOffset: 0.0404497
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 4.30085
+      pedestalOffset: -1.561
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 2.89022
+      pedestalOffset: 0.137532
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.15026
+      pedestalOffset: 0.819665
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 6.70061
+      pedestalOffset: 2.97307
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.35119
+      pedestalOffset: 1.58327
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 6.69605
+      pedestalOffset: -1.34101
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.83281
+      pedestalOffset: -1.70077
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.98297
+      pedestalOffset: -2.63635
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.63573
+      pedestalOffset: -6.02125
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.67258
+      pedestalOffset: -0.694569
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.6237
+      pedestalOffset: -0.358614
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.12666
+      pedestalOffset: -0.593338
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.25099
+      pedestalOffset: -3.48301
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 4.52445
+      pedestalOffset: -1.79588
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 6.38366
+      pedestalOffset: -1.74047
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.76834
+      pedestalOffset: -1.16677
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 4.06341
+      pedestalOffset: -1.82878
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.46704
+      pedestalOffset: -5.38587
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.41553
+      pedestalOffset: -1.43867
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.45759
+      pedestalOffset: 2.98239
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.24956
+      pedestalOffset: -5.62238
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.40211
+      pedestalOffset: -2.70053
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.60129
+      pedestalOffset: 1.69566
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.37579
+      pedestalOffset: -2.66127
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 2.90399
+      pedestalOffset: 2.16674
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.04917
+      pedestalOffset: -1.83674
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.29631
+      pedestalOffset: -1.85686
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.50622
+      pedestalOffset: -1.8327
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.17242
+      pedestalOffset: -1.35482
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.19453
+      pedestalOffset: -2.11463
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 8.6493
+      pedestalOffset: 1.75871
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.48046
+      pedestalOffset: -3.9822
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 2.95659
+      pedestalOffset: 1.67115
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.34099
+      pedestalOffset: 0.426789
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 2.96902
+      pedestalOffset: -2.3904
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.22302
+      pedestalOffset: -3.71655
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.21798
+      pedestalOffset: -3.8854
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.05069
+      pedestalOffset: -2.71954
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.86772
+      pedestalOffset: -1.57671
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.59099
+      pedestalOffset: -2.7792
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.29634
+      pedestalOffset: -2.91181
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 6.11458
+      pedestalOffset: -3.45707
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.49975
+      pedestalOffset: -4.32429
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.23348
+      pedestalOffset: 0.716236
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 6.69322
+      pedestalOffset: -0.573798
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 4.08485
+      pedestalOffset: 2.98016
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.40626
+      pedestalOffset: -1.5264
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.15682
+      pedestalOffset: -3.40838
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.73434
+      pedestalOffset: -0.282066
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.57531
+      pedestalOffset: -0.1737
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 3.4535
+      pedestalOffset: -1.32535
+    }
+
+
+  }
+  // calorimeter15
+  calo15 : {
+    xtal0 : {
+      noiseLevel  : 3.6406
+      pedestalOffset: -4.57073
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.20126
+      pedestalOffset: -3.57002
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 2.56917
+      pedestalOffset: 0.226943
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.03433
+      pedestalOffset: -6.18402
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 5.66024
+      pedestalOffset: -2.81955
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.28338
+      pedestalOffset: -0.857209
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.40717
+      pedestalOffset: 0.178762
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.60966
+      pedestalOffset: 2.08568
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 2.99807
+      pedestalOffset: -2.9457
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.54164
+      pedestalOffset: -6.75266
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 4.71248
+      pedestalOffset: -2.4314
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 4.47245
+      pedestalOffset: 2.45387
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.70447
+      pedestalOffset: 0.161093
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.06266
+      pedestalOffset: -4.824
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 5.75939
+      pedestalOffset: -2.57677
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.86978
+      pedestalOffset: -2.91988
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.20462
+      pedestalOffset: -1.82228
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.68647
+      pedestalOffset: -2.71096
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.22146
+      pedestalOffset: -1.23984
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.64085
+      pedestalOffset: -0.198233
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 5.54218
+      pedestalOffset: -0.377936
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 2.98127
+      pedestalOffset: -2.5452
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.18785
+      pedestalOffset: -1.23311
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.28027
+      pedestalOffset: 1.93802
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.24984
+      pedestalOffset: 1.93519
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.52161
+      pedestalOffset: -1.7036
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 6.60899
+      pedestalOffset: -4.45133
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 4.66442
+      pedestalOffset: -3.65002
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 5.17853
+      pedestalOffset: 0.87214
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 2.9692
+      pedestalOffset: 0.7262
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.08237
+      pedestalOffset: -4.01043
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 2.97305
+      pedestalOffset: -0.70921
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.44713
+      pedestalOffset: 0.525039
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 5.65789
+      pedestalOffset: -4.55373
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.5066
+      pedestalOffset: 0.480613
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 4.62665
+      pedestalOffset: 0.281728
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.67286
+      pedestalOffset: 0.740766
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 4.92926
+      pedestalOffset: -2.51794
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.75451
+      pedestalOffset: 0.0718861
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.59198
+      pedestalOffset: -3.48694
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.23654
+      pedestalOffset: -2.13136
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.49119
+      pedestalOffset: -3.65356
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 5.13738
+      pedestalOffset: -1.45445
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 5.44485
+      pedestalOffset: -2.04581
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.85394
+      pedestalOffset: -5.03059
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 5.14597
+      pedestalOffset: -3.6705
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.06665
+      pedestalOffset: -5.64609
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.01162
+      pedestalOffset: -1.97213
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.66837
+      pedestalOffset: -3.39413
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.54303
+      pedestalOffset: -3.55456
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 4.37714
+      pedestalOffset: -2.06755
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 4.26979
+      pedestalOffset: -1.87701
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.54719
+      pedestalOffset: -2.47532
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.52098
+      pedestalOffset: -6.11703
+    }
+
+
+  }
+  // calorimeter16
+  calo16 : {
+    xtal0 : {
+      noiseLevel  : 3.19727
+      pedestalOffset: -0.677613
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 6.11126
+      pedestalOffset: -0.946845
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.05581
+      pedestalOffset: -4.56643
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.03433
+      pedestalOffset: -0.446089
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.57209
+      pedestalOffset: 4.23992
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 4.07317
+      pedestalOffset: 1.53893
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.17846
+      pedestalOffset: -0.833093
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.00963
+      pedestalOffset: 2.17364
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.92808
+      pedestalOffset: -3.65691
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.618
+      pedestalOffset: 6.90467
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.7478
+      pedestalOffset: -1.89546
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.94284
+      pedestalOffset: 2.06024
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.4271
+      pedestalOffset: -2.42358
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.17576
+      pedestalOffset: 6.61049
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.41315
+      pedestalOffset: 5.84195
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.41012
+      pedestalOffset: -0.729385
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.38823
+      pedestalOffset: -0.619889
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.50976
+      pedestalOffset: -1.35628
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 5.79404
+      pedestalOffset: 4.69324
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.88271
+      pedestalOffset: -1.51949
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.79711
+      pedestalOffset: 0.989348
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.7372
+      pedestalOffset: -2.85555
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.07336
+      pedestalOffset: 3.55225
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 6.43466
+      pedestalOffset: 0.0574344
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 2.93151
+      pedestalOffset: -0.160134
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.67851
+      pedestalOffset: -1.0799
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.74831
+      pedestalOffset: 1.36797
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.1453
+      pedestalOffset: -1.39767
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.65554
+      pedestalOffset: 3.39792
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.25736
+      pedestalOffset: 1.64184
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 5.23366
+      pedestalOffset: 6.94795
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.89749
+      pedestalOffset: -1.19172
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 5.26186
+      pedestalOffset: 2.54096
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.83683
+      pedestalOffset: 0.958518
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 2.81673
+      pedestalOffset: -0.265209
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 4.89982
+      pedestalOffset: -1.91283
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 2.78616
+      pedestalOffset: -2.75126
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.0893
+      pedestalOffset: 0.499749
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.36453
+      pedestalOffset: -5.50163
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.47397
+      pedestalOffset: -2.32385
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 5.56573
+      pedestalOffset: -4.17165
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.05948
+      pedestalOffset: -0.542785
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 4.03751
+      pedestalOffset: -1.05058
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.04067
+      pedestalOffset: 4.92685
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 2.94867
+      pedestalOffset: -2.45268
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.21401
+      pedestalOffset: 3.70626
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.43292
+      pedestalOffset: -2.77798
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 2.8596
+      pedestalOffset: 0.584453
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.9586
+      pedestalOffset: 2.78343
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.18461
+      pedestalOffset: 3.77548
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 8.75447
+      pedestalOffset: 4.20291
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.82042
+      pedestalOffset: -3.60031
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.15144
+      pedestalOffset: -0.13987
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 6.64898
+      pedestalOffset: -4.58618
+    }
+
+
+  }
+  // calorimeter17
+  calo17 : {
+    xtal0 : {
+      noiseLevel  : 4.7102
+      pedestalOffset: -1.06399
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.82931
+      pedestalOffset: 2.79849
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.12267
+      pedestalOffset: 2.00116
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.29558
+      pedestalOffset: 2.18941
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.04716
+      pedestalOffset: -1.3145
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 4.92292
+      pedestalOffset: -4.13583
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.71439
+      pedestalOffset: 2.8533
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.94613
+      pedestalOffset: -5.23007
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 5.58605
+      pedestalOffset: -0.251128
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.12168
+      pedestalOffset: 0.753498
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.16775
+      pedestalOffset: -1.64418
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.46668
+      pedestalOffset: 2.48533
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 2.97444
+      pedestalOffset: 0.300101
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.17443
+      pedestalOffset: -1.66193
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 5.09053
+      pedestalOffset: -1.05215
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 4.46175
+      pedestalOffset: 0.364671
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.21828
+      pedestalOffset: 2.11045
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.42953
+      pedestalOffset: -3.06056
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.12929
+      pedestalOffset: 3.12039
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.47951
+      pedestalOffset: 1.79907
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.16746
+      pedestalOffset: 2.26824
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.81512
+      pedestalOffset: 0.635349
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 4.20519
+      pedestalOffset: -3.40721
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.06061
+      pedestalOffset: -0.0740129
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.77889
+      pedestalOffset: 2.30192
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.72732
+      pedestalOffset: 4.12643
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 6.3078
+      pedestalOffset: -2.68536
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.69098
+      pedestalOffset: -1.54828
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.39925
+      pedestalOffset: -2.23385
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.07768
+      pedestalOffset: 1.27401
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.38662
+      pedestalOffset: 2.96383
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 9.40728
+      pedestalOffset: -2.91339
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.77989
+      pedestalOffset: 0.722499
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.63686
+      pedestalOffset: 2.00206
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.25456
+      pedestalOffset: -1.66424
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.32758
+      pedestalOffset: -4.55509
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.36666
+      pedestalOffset: 0.375094
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.18774
+      pedestalOffset: -0.578652
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.10027
+      pedestalOffset: -1.42415
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 4.38495
+      pedestalOffset: 0.232808
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.02072
+      pedestalOffset: -1.07116
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 7.9688
+      pedestalOffset: 1.8892
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.05231
+      pedestalOffset: 0.692958
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 5.49126
+      pedestalOffset: 3.62336
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.34876
+      pedestalOffset: -2.61393
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.14835
+      pedestalOffset: -1.01134
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 5.23812
+      pedestalOffset: 2.63226
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 4.25204
+      pedestalOffset: 1.11635
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 4.50783
+      pedestalOffset: -3.45308
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.67299
+      pedestalOffset: -1.1446
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 5.68012
+      pedestalOffset: 1.11031
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 6.18733
+      pedestalOffset: -1.72648
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.80181
+      pedestalOffset: -1.24059
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.5024
+      pedestalOffset: 4.46393
+    }
+
+
+  }
+  // calorimeter18
+  calo18 : {
+    xtal0 : {
+      noiseLevel  : 3.81491
+      pedestalOffset: 1.27806
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.70699
+      pedestalOffset: 2.15362
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.1718
+      pedestalOffset: -0.303683
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.30869
+      pedestalOffset: 2.65387
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.06106
+      pedestalOffset: -2.06124
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.2085
+      pedestalOffset: 2.5817
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.132
+      pedestalOffset: -1.91208
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.94931
+      pedestalOffset: -1.62701
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 5.81154
+      pedestalOffset: 3.95519
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.69362
+      pedestalOffset: 0.107372
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.53289
+      pedestalOffset: -0.644723
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 4.25097
+      pedestalOffset: 4.12234
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.18259
+      pedestalOffset: -2.30625
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.20385
+      pedestalOffset: 5.13232
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 2.79025
+      pedestalOffset: 0.353143
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.32428
+      pedestalOffset: 3.62188
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.53797
+      pedestalOffset: -0.488518
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.6535
+      pedestalOffset: 0.869001
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.76061
+      pedestalOffset: -0.897184
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.13719
+      pedestalOffset: 2.46964
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.31792
+      pedestalOffset: 0.0850543
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.40418
+      pedestalOffset: -0.319379
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 6.83499
+      pedestalOffset: 2.52269
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.23856
+      pedestalOffset: -0.894607
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.89297
+      pedestalOffset: -1.76109
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.01258
+      pedestalOffset: -1.44277
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.34559
+      pedestalOffset: 0.20223
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 5.2986
+      pedestalOffset: 4.46051
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.98202
+      pedestalOffset: -5.11401
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.2513
+      pedestalOffset: 5.62598
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.45523
+      pedestalOffset: -1.39168
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.38476
+      pedestalOffset: 1.28202
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.90626
+      pedestalOffset: 2.79581
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.56418
+      pedestalOffset: -1.38352
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.31956
+      pedestalOffset: -1.14305
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.31545
+      pedestalOffset: 1.01736
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.01486
+      pedestalOffset: -3.65273
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 2.9986
+      pedestalOffset: -3.54975
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 4.91286
+      pedestalOffset: 0.85259
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.07547
+      pedestalOffset: -1.36719
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.00722
+      pedestalOffset: 4.92536
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.47237
+      pedestalOffset: -0.404231
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.47612
+      pedestalOffset: -3.2841
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.16006
+      pedestalOffset: 1.04022
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 9.85104
+      pedestalOffset: 2.94978
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.54823
+      pedestalOffset: 0.430775
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 4.44256
+      pedestalOffset: -4.42613
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.99119
+      pedestalOffset: -2.00879
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.58516
+      pedestalOffset: -4.17352
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.11725
+      pedestalOffset: 0.0243236
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 9.45216
+      pedestalOffset: 2.24502
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 4.58751
+      pedestalOffset: 4.27375
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.77175
+      pedestalOffset: -1.42644
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.93575
+      pedestalOffset: -1.813
+    }
+
+
+  }
+  // calorimeter19
+  calo19 : {
+    xtal0 : {
+      noiseLevel  : 2.93332
+      pedestalOffset: -0.849457
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.42455
+      pedestalOffset: -2.30644
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.26902
+      pedestalOffset: -2.09274
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 2.99783
+      pedestalOffset: -0.56553
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 2.98794
+      pedestalOffset: 4.30765
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.52917
+      pedestalOffset: 0.844233
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.42507
+      pedestalOffset: -4.08531
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.42353
+      pedestalOffset: -1.09897
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 3.85899
+      pedestalOffset: -0.156313
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.45549
+      pedestalOffset: -2.33728
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.29712
+      pedestalOffset: 6.74752
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.60685
+      pedestalOffset: 0.702069
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.25807
+      pedestalOffset: 6.20526
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.8725
+      pedestalOffset: -1.62299
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.37011
+      pedestalOffset: 1.73161
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 2.81922
+      pedestalOffset: 2.08085
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.88511
+      pedestalOffset: -0.029869
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.32469
+      pedestalOffset: -1.71813
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.44986
+      pedestalOffset: 5.02705
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.77476
+      pedestalOffset: -1.7691
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.1833
+      pedestalOffset: -2.36898
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.51155
+      pedestalOffset: 1.58898
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.77621
+      pedestalOffset: 1.9264
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.54063
+      pedestalOffset: 0.171101
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.33668
+      pedestalOffset: 3.73877
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.04108
+      pedestalOffset: 0.414443
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.66751
+      pedestalOffset: -2.38206
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.00311
+      pedestalOffset: 1.82144
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.07421
+      pedestalOffset: 4.15997
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 5.84813
+      pedestalOffset: -5.31133
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.37131
+      pedestalOffset: -4.03574
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.30077
+      pedestalOffset: -0.638331
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.71986
+      pedestalOffset: -0.431585
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.33524
+      pedestalOffset: 1.6645
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.20291
+      pedestalOffset: 0.19639
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.25888
+      pedestalOffset: -4.67087
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.4138
+      pedestalOffset: -2.13648
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.49786
+      pedestalOffset: 4.53712
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.70656
+      pedestalOffset: -6.9765
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 5.24097
+      pedestalOffset: 2.57025
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.68612
+      pedestalOffset: -1.51221
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.6944
+      pedestalOffset: -1.27586
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.69406
+      pedestalOffset: -1.45211
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 3.37504
+      pedestalOffset: 0.976891
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 3.66492
+      pedestalOffset: 1.00049
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.07924
+      pedestalOffset: -0.0858057
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 7.99726
+      pedestalOffset: -1.42439
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.01194
+      pedestalOffset: 2.51953
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.50406
+      pedestalOffset: 0.743962
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.36013
+      pedestalOffset: 0.0923624
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 7.22335
+      pedestalOffset: -2.61893
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.46294
+      pedestalOffset: -3.12223
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.61491
+      pedestalOffset: -1.27161
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 3.54979
+      pedestalOffset: -1.39529
+    }
+
+
+  }
+  // calorimeter20
+  calo20 : {
+    xtal0 : {
+      noiseLevel  : 3.98646
+      pedestalOffset: 1.90703
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.16397
+      pedestalOffset: -2.523
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.29562
+      pedestalOffset: 1.75584
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.48527
+      pedestalOffset: -0.750531
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.01876
+      pedestalOffset: 4.33975
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.67518
+      pedestalOffset: -0.81968
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 4.53002
+      pedestalOffset: -3.89806
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.16357
+      pedestalOffset: -1.84245
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.12309
+      pedestalOffset: -1.39228
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 4.53593
+      pedestalOffset: 1.59628
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 2.95896
+      pedestalOffset: -3.68605
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 4.2081
+      pedestalOffset: 2.75818
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 4.28916
+      pedestalOffset: -0.0785489
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.45526
+      pedestalOffset: -2.49777
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.41839
+      pedestalOffset: -1.80202
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.5907
+      pedestalOffset: 3.22327
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.68654
+      pedestalOffset: 0.917162
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 3.4936
+      pedestalOffset: -4.75961
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.17505
+      pedestalOffset: 3.39196
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 2.85657
+      pedestalOffset: -3.77123
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.24491
+      pedestalOffset: -2.71807
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.11833
+      pedestalOffset: 2.65618
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.03448
+      pedestalOffset: 1.34813
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.29598
+      pedestalOffset: 0.0762198
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.84842
+      pedestalOffset: -0.662002
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.83874
+      pedestalOffset: 0.660051
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 4.77563
+      pedestalOffset: -1.68118
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.48253
+      pedestalOffset: -1.8929
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.84183
+      pedestalOffset: -2.79088
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.26336
+      pedestalOffset: -3.10604
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.15956
+      pedestalOffset: 1.10001
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.68508
+      pedestalOffset: -2.65099
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.31599
+      pedestalOffset: -1.07772
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.20616
+      pedestalOffset: 2.64624
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.52863
+      pedestalOffset: -3.55755
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.46759
+      pedestalOffset: -1.13688
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.01089
+      pedestalOffset: -0.326222
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.12109
+      pedestalOffset: 0.564791
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.19764
+      pedestalOffset: -1.17967
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.92765
+      pedestalOffset: 0.320973
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.80068
+      pedestalOffset: -0.700534
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.358
+      pedestalOffset: -1.84385
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.86109
+      pedestalOffset: -1.97546
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.90719
+      pedestalOffset: 1.80504
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 4.43585
+      pedestalOffset: 0.657552
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.80365
+      pedestalOffset: -1.35801
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 2.99838
+      pedestalOffset: -0.639462
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 4.34953
+      pedestalOffset: -2.94328
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 4.71977
+      pedestalOffset: 1.05693
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.88446
+      pedestalOffset: -1.95968
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.5564
+      pedestalOffset: -2.30431
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 4.10635
+      pedestalOffset: 1.23414
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.65704
+      pedestalOffset: -2.30179
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 6.95829
+      pedestalOffset: -0.854287
+    }
+
+
+  }
+  // calorimeter21
+  calo21 : {
+    xtal0 : {
+      noiseLevel  : 3.19702
+      pedestalOffset: -0.0991683
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.42491
+      pedestalOffset: -2.47209
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.74202
+      pedestalOffset: -4.19994
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.10775
+      pedestalOffset: -1.78658
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.38504
+      pedestalOffset: -2.37044
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.03504
+      pedestalOffset: -1.56896
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.14472
+      pedestalOffset: -0.974916
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.05908
+      pedestalOffset: -0.707947
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.26745
+      pedestalOffset: -1.27728
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.57416
+      pedestalOffset: -4.7442
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.00519
+      pedestalOffset: 0.198801
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 5.79754
+      pedestalOffset: -3.23891
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 2.87814
+      pedestalOffset: -3.4265
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 6.87459
+      pedestalOffset: -3.57459
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 8.10548
+      pedestalOffset: 1.56791
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.22358
+      pedestalOffset: -6.7201
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 9.22792
+      pedestalOffset: -2.76429
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 5.28606
+      pedestalOffset: -3.94886
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.07437
+      pedestalOffset: -1.44166
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 2.98123
+      pedestalOffset: -0.654417
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.28038
+      pedestalOffset: -2.66388
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.10167
+      pedestalOffset: -0.363044
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.59259
+      pedestalOffset: -1.19977
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.44044
+      pedestalOffset: -1.49403
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.74414
+      pedestalOffset: 3.06788
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 8.50311
+      pedestalOffset: -4.53057
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.06226
+      pedestalOffset: 0.335749
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 4.17555
+      pedestalOffset: -2.39897
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.17897
+      pedestalOffset: -2.13717
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.76944
+      pedestalOffset: -1.30681
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 6.32981
+      pedestalOffset: 0.711122
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.50752
+      pedestalOffset: 0.0290216
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 3.36116
+      pedestalOffset: 0.944638
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.66317
+      pedestalOffset: -2.0488
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 7.06798
+      pedestalOffset: -4.23803
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 4.76462
+      pedestalOffset: -0.41941
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.65469
+      pedestalOffset: -8.0435
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 2.79058
+      pedestalOffset: -4.69285
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.97158
+      pedestalOffset: 0.149723
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.5644
+      pedestalOffset: 1.9837
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.6618
+      pedestalOffset: -1.23323
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.04638
+      pedestalOffset: 4.98244
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.86219
+      pedestalOffset: -0.225719
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.01014
+      pedestalOffset: -1.2952
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 3.18911
+      pedestalOffset: 1.66887
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.99065
+      pedestalOffset: -0.240712
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.52876
+      pedestalOffset: -2.70512
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 2.90373
+      pedestalOffset: -3.59719
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.09562
+      pedestalOffset: -2.31677
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 4.31026
+      pedestalOffset: -4.57921
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.5274
+      pedestalOffset: -1.68224
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 4.78044
+      pedestalOffset: -0.693325
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 2.96815
+      pedestalOffset: -1.48943
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 3.0675
+      pedestalOffset: -2.2116
+    }
+
+
+  }
+  // calorimeter22
+  calo22 : {
+    xtal0 : {
+      noiseLevel  : 3.3047
+      pedestalOffset: -0.742001
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.45444
+      pedestalOffset: -3.64169
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.73656
+      pedestalOffset: -1.12394
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.55815
+      pedestalOffset: -0.686296
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.69617
+      pedestalOffset: -3.65224
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.15752
+      pedestalOffset: -3.74507
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.04561
+      pedestalOffset: -4.69139
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.84796
+      pedestalOffset: -2.24609
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 4.42482
+      pedestalOffset: -3.57472
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.26558
+      pedestalOffset: -6.12117
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.74246
+      pedestalOffset: -2.19974
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 4.29171
+      pedestalOffset: -3.49346
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 4.04869
+      pedestalOffset: 0.953612
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 4.06508
+      pedestalOffset: -0.413595
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.28067
+      pedestalOffset: -2.08954
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.46007
+      pedestalOffset: 0.30623
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 3.62073
+      pedestalOffset: -0.430642
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.8161
+      pedestalOffset: -2.37825
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 4.59658
+      pedestalOffset: -4.08575
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.5904
+      pedestalOffset: -4.43217
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 5.46449
+      pedestalOffset: -0.269568
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.23136
+      pedestalOffset: -2.04986
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.20766
+      pedestalOffset: -2.10568
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 4.37095
+      pedestalOffset: -4.95559
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.03726
+      pedestalOffset: -1.20688
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.96176
+      pedestalOffset: -0.112442
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 3.39945
+      pedestalOffset: 2.91996
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 2.94264
+      pedestalOffset: -0.149264
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.02921
+      pedestalOffset: -5.1263
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 4.82672
+      pedestalOffset: 5.3666
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 4.09286
+      pedestalOffset: -2.89806
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 3.57704
+      pedestalOffset: -3.25808
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 4.59014
+      pedestalOffset: -2.53629
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.43499
+      pedestalOffset: -0.987512
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 3.69484
+      pedestalOffset: -2.31458
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.17527
+      pedestalOffset: 1.91286
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.18319
+      pedestalOffset: -2.36049
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.04461
+      pedestalOffset: -4.24694
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.56122
+      pedestalOffset: 0.558098
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.66092
+      pedestalOffset: -0.724102
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.49637
+      pedestalOffset: -1.51754
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 4.15564
+      pedestalOffset: -3.019
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.05519
+      pedestalOffset: -0.604382
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.39159
+      pedestalOffset: -0.898004
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 3.63181
+      pedestalOffset: 0.271625
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.87074
+      pedestalOffset: 4.31194
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.43339
+      pedestalOffset: 0.634417
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.97351
+      pedestalOffset: -8.21151
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.09685
+      pedestalOffset: -2.99474
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.20328
+      pedestalOffset: -1.21656
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.73954
+      pedestalOffset: -0.824832
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.06501
+      pedestalOffset: 1.42854
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 3.0177
+      pedestalOffset: -0.0817002
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 4.0788
+      pedestalOffset: -1.01205
+    }
+
+
+  }
+  // calorimeter23
+  calo23 : {
+    xtal0 : {
+      noiseLevel  : 3.27753
+      pedestalOffset: -0.299075
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 4.53443
+      pedestalOffset: -4.3925
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 4.08958
+      pedestalOffset: 2.24283
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.18331
+      pedestalOffset: -2.26927
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 3.68218
+      pedestalOffset: 1.0855
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.30053
+      pedestalOffset: 2.07551
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.37659
+      pedestalOffset: -4.59409
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 3.69066
+      pedestalOffset: -0.420234
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 3.93384
+      pedestalOffset: -2.83561
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 4.79866
+      pedestalOffset: 0.0535213
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.18574
+      pedestalOffset: 3.78056
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 3.11547
+      pedestalOffset: 1.6894
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.52793
+      pedestalOffset: -5.55612
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.64098
+      pedestalOffset: -2.45626
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 3.64307
+      pedestalOffset: -2.16092
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.23111
+      pedestalOffset: -4.76414
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 5.12541
+      pedestalOffset: -0.624473
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.62532
+      pedestalOffset: -3.75927
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 2.88573
+      pedestalOffset: -3.77401
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.60294
+      pedestalOffset: -2.28406
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 3.1386
+      pedestalOffset: 1.18323
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 3.21167
+      pedestalOffset: 1.49248
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 3.45673
+      pedestalOffset: -3.83953
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 3.39391
+      pedestalOffset: 0.796496
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 3.44869
+      pedestalOffset: -4.32676
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 3.74584
+      pedestalOffset: 1.29783
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 5.65147
+      pedestalOffset: 0.692342
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.1561
+      pedestalOffset: 1.17016
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.40738
+      pedestalOffset: -1.77685
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 3.35458
+      pedestalOffset: -2.50703
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 3.10046
+      pedestalOffset: -4.57704
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 8.51473
+      pedestalOffset: -1.76766
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 2.99543
+      pedestalOffset: -0.554707
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 3.39862
+      pedestalOffset: -2.39715
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 5.51329
+      pedestalOffset: -1.47334
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 4.51505
+      pedestalOffset: 2.51738
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 2.93392
+      pedestalOffset: -3.06517
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.15247
+      pedestalOffset: -4.50031
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.01322
+      pedestalOffset: -5.80711
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 3.50358
+      pedestalOffset: -4.13972
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 3.39562
+      pedestalOffset: -0.969807
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 3.50422
+      pedestalOffset: 1.6549
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 3.28218
+      pedestalOffset: -4.47738
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 4.02815
+      pedestalOffset: -6.30496
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 3.40062
+      pedestalOffset: -2.40508
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 3.00257
+      pedestalOffset: -0.529345
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 3.02918
+      pedestalOffset: 1.19068
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.42128
+      pedestalOffset: -3.06729
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.64849
+      pedestalOffset: 0.0643301
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.29063
+      pedestalOffset: -0.676887
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 3.13039
+      pedestalOffset: -2.04572
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.94569
+      pedestalOffset: -0.143386
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 6.47689
+      pedestalOffset: -2.77597
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 5.35376
+      pedestalOffset: -1.10021
+    }
+
+
+  }
+  // calorimeter24
+  calo24 : {
+    xtal0 : {
+      noiseLevel  : 3.61989
+      pedestalOffset: 2.11348
+    }
+
+
+    xtal1 : {
+      noiseLevel  : 3.58402
+      pedestalOffset: -1.95938
+    }
+
+
+    xtal2 : {
+      noiseLevel  : 3.57454
+      pedestalOffset: -7.74188
+    }
+
+
+    xtal3 : {
+      noiseLevel  : 3.37548
+      pedestalOffset: -1.90845
+    }
+
+
+    xtal4 : {
+      noiseLevel  : 4.86741
+      pedestalOffset: 1.57704
+    }
+
+
+    xtal5 : {
+      noiseLevel  : 3.83138
+      pedestalOffset: -6.00567
+    }
+
+
+    xtal6 : {
+      noiseLevel  : 3.76192
+      pedestalOffset: -1.53057
+    }
+
+
+    xtal7 : {
+      noiseLevel  : 4.04815
+      pedestalOffset: -2.4885
+    }
+
+
+    xtal8 : {
+      noiseLevel  : 5.21976
+      pedestalOffset: 1.41458
+    }
+
+
+    xtal9 : {
+      noiseLevel  : 3.32654
+      pedestalOffset: -0.966868
+    }
+
+
+    xtal10 : {
+      noiseLevel  : 3.55235
+      pedestalOffset: -4.43634
+    }
+
+
+    xtal11 : {
+      noiseLevel  : 6.6477
+      pedestalOffset: -4.46303
+    }
+
+
+    xtal12 : {
+      noiseLevel  : 3.84803
+      pedestalOffset: 1.65277
+    }
+
+
+    xtal13 : {
+      noiseLevel  : 3.87717
+      pedestalOffset: -3.69438
+    }
+
+
+    xtal14 : {
+      noiseLevel  : 4.15157
+      pedestalOffset: 1.13316
+    }
+
+
+    xtal15 : {
+      noiseLevel  : 3.99638
+      pedestalOffset: -8.10396
+    }
+
+
+    xtal16 : {
+      noiseLevel  : 4.12864
+      pedestalOffset: -5.22868
+    }
+
+
+    xtal17 : {
+      noiseLevel  : 4.01684
+      pedestalOffset: -2.37755
+    }
+
+
+    xtal18 : {
+      noiseLevel  : 3.92801
+      pedestalOffset: -4.74397
+    }
+
+
+    xtal19 : {
+      noiseLevel  : 3.55725
+      pedestalOffset: -2.66899
+    }
+
+
+    xtal20 : {
+      noiseLevel  : 4.28532
+      pedestalOffset: -1.26685
+    }
+
+
+    xtal21 : {
+      noiseLevel  : 4.00829
+      pedestalOffset: -0.739693
+    }
+
+
+    xtal22 : {
+      noiseLevel  : 5.42097
+      pedestalOffset: 7.68471
+    }
+
+
+    xtal23 : {
+      noiseLevel  : 5.60467
+      pedestalOffset: -2.27377
+    }
+
+
+    xtal24 : {
+      noiseLevel  : 4.89095
+      pedestalOffset: -5.7729
+    }
+
+
+    xtal25 : {
+      noiseLevel  : 4.21387
+      pedestalOffset: -2.1287
+    }
+
+
+    xtal26 : {
+      noiseLevel  : 7.12114
+      pedestalOffset: -2.52666
+    }
+
+
+    xtal27 : {
+      noiseLevel  : 3.1737
+      pedestalOffset: 4.21407
+    }
+
+
+    xtal28 : {
+      noiseLevel  : 3.68533
+      pedestalOffset: 0.999077
+    }
+
+
+    xtal29 : {
+      noiseLevel  : 4.19375
+      pedestalOffset: -3.65413
+    }
+
+
+    xtal30 : {
+      noiseLevel  : 5.87666
+      pedestalOffset: -1.14308
+    }
+
+
+    xtal31 : {
+      noiseLevel  : 4.44121
+      pedestalOffset: -2.82397
+    }
+
+
+    xtal32 : {
+      noiseLevel  : 5.07082
+      pedestalOffset: -6.07801
+    }
+
+
+    xtal33 : {
+      noiseLevel  : 4.17006
+      pedestalOffset: -5.49151
+    }
+
+
+    xtal34 : {
+      noiseLevel  : 4.29008
+      pedestalOffset: -4.2501
+    }
+
+
+    xtal35 : {
+      noiseLevel  : 3.72405
+      pedestalOffset: -6.84979
+    }
+
+
+    xtal36 : {
+      noiseLevel  : 3.28912
+      pedestalOffset: 0.391003
+    }
+
+
+    xtal37 : {
+      noiseLevel  : 3.55964
+      pedestalOffset: -0.370977
+    }
+
+
+    xtal38 : {
+      noiseLevel  : 3.68148
+      pedestalOffset: -4.06002
+    }
+
+
+    xtal39 : {
+      noiseLevel  : 6.27728
+      pedestalOffset: -2.2027
+    }
+
+
+    xtal40 : {
+      noiseLevel  : 4.02712
+      pedestalOffset: 2.30165
+    }
+
+
+    xtal41 : {
+      noiseLevel  : 4.82841
+      pedestalOffset: -1.10527
+    }
+
+
+    xtal42 : {
+      noiseLevel  : 7.07055
+      pedestalOffset: -4.93442
+    }
+
+
+    xtal43 : {
+      noiseLevel  : 5.52171
+      pedestalOffset: -2.13247
+    }
+
+
+    xtal44 : {
+      noiseLevel  : 5.44672
+      pedestalOffset: 1.63875
+    }
+
+
+    xtal45 : {
+      noiseLevel  : 4.03317
+      pedestalOffset: 3.46749
+    }
+
+
+    xtal46 : {
+      noiseLevel  : 4.07321
+      pedestalOffset: -1.60857
+    }
+
+
+    xtal47 : {
+      noiseLevel  : 3.56826
+      pedestalOffset: -3.07412
+    }
+
+
+    xtal48 : {
+      noiseLevel  : 3.46083
+      pedestalOffset: -0.658539
+    }
+
+
+    xtal49 : {
+      noiseLevel  : 3.83245
+      pedestalOffset: 1.11219
+    }
+
+
+    xtal50 : {
+      noiseLevel  : 4.99003
+      pedestalOffset: 0.987071
+    }
+
+
+    xtal51 : {
+      noiseLevel  : 3.87696
+      pedestalOffset: 0.25161
+    }
+
+
+    xtal52 : {
+      noiseLevel  : 4.77734
+      pedestalOffset: 3.58907
+    }
+
+
+    xtal53 : {
+      noiseLevel  : 5.26574
+      pedestalOffset: 2.47765
+    }
+
+
+  }
+}
+
+END_PROLOG

@@ -74,10 +74,14 @@ class Spline:
 #-------------------------------------------------------------------------------
 
     
-    def __init__(self, rSpline, xtalNum):
+    def __init__(self, rSpline, xtalNum, caloNum):
         """
         rSpline : a ROOT spline, representing a normalized pulse
                   template
+        
+        xtalNum : [int] the crystal number this spline is based from
+        
+        caloNum : [int] the calo number this spline is based from
         """
 
         spline = []
@@ -95,6 +99,7 @@ class Spline:
         self.samplingRate = times[2] - times[1]
 
         self.xtalNum = xtalNum
+        self.caloNum = caloNum
 
 
 
@@ -384,11 +389,12 @@ class Island:
             it is imperfect and needs work
             """
             thisEnergy = 0
-            while(thisEnergy < 100):
+            while(thisEnergy < 50):
                 thisEnergy = abs(np.random.normal(loc=energyPeak,
                                                   scale=energyScale))
-
-            thisHeight = thisEnergy / (calibConstant * normalIntegral)
+            
+            # thisHeight/thisEnergy = 'normal'Height/'normal'Energy
+            thisHeight = thisEnergy / (calibConstant * normalIntegral * self.spline.getPeak())
             
             factors.append(thisHeight)
         
@@ -748,21 +754,21 @@ class Island:
 
             self.time = theseTimes
             self.yValues = thisIsland
-            
+
             """lastly we can print a few parameters if requested"""
 
             if(verbosity):
                 print("Spline template crystal number: "+ \
                       "{0}".format(self.spline.xtalNum))
-                
+
                 print("Spline template peak: " + \
                       "{0:.2f}".format(self.spline.getPeak()))
-                
+
                 print("Crystal energy calibration constant: " + \
                       "{0:.2f}".format(self.energyCalibrationVal))
-                
+
                 print("Pulse integral: " + \
                       "{0:.2f}".format(self.integral))
-                
-                print("Island total energy: " + \
+
+                print("'Q-Method-ish' Island 'total' energy: " + \
                       "{0:.2f} MeV".format(self.totalEnergy))
