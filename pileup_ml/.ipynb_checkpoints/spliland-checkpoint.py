@@ -196,6 +196,15 @@ class Island:
                               the chopping has been applied. Just like
                               yValues, these may be in ADC units or they
                               may be normalized
+                              
+    pulses                  : [list] a list of ndarrays with the same shape as
+                              time, with each array being an individual pulse
+                              making up the island
+    
+    simple_ys               : [ndarray] normalized energy values of pulses in
+                              this island, put into a shape matching time, so
+                              that we can plot time vs this and have sharp
+                              peaks at exactly where pulses are
     """
 #-------------------------------------------------------------------------------
 #------------------------------ Public  Functions ------------------------------
@@ -627,6 +636,8 @@ class Island:
         self.yValues = []
         self.choppedTime = []
         self.choppedYValues = []
+        self.pulses = []
+        self.simple_ys = []
         
         """setup the spine variables"""
 
@@ -655,6 +666,8 @@ class Island:
                                np.array([splineTimes[splineTimes.size-1] + \
                                         splineSamplingRate*i \
                                         for i in range(1,self.nTailSamples+1)]))
+        emptyTimes = theseTimes.copy()
+        emptyIsland = thisIsland.copy()
         
         """if nPulses is zero, we can skip almost everything"""
 
@@ -695,6 +708,7 @@ class Island:
 
             """put the pulses together into thisIsland"""
 
+            pulses = [] 
             for pulseIndex, deltaT in enumerate(self.timeOffsets):
                 deltaT /= 2
                 sample_offset = int(np.floor(deltaT))
@@ -702,14 +716,27 @@ class Island:
                                     splineTimes, splineShape) * \
                           self.energyScaleFactors[pulseIndex]
                 
+                thisPulse = emptyIsland.copy()
+                thisPulse[sample_offset:sample_offset + \
+                          len(splineI)] += splineI
+
                 thisIsland[sample_offset:sample_offset + \
                            len(splineI)] += splineI
+                
+                pulses.append(thisPulse)
 
             """get the sampling right"""
 
             thisIsland, theseTimes = self.digitize_(verbosity,
                                                     thisIsland,
                                                     theseTimes)
+            
+            
+            for pulse in pulses:
+                thisPulse, someTimes = self.digitize_(False,
+                                                      pulse,
+                                                      emptyTimes)
+                self.pulses.append(thisPulse)
 
             """add gaussian noise to each sample"""
 
@@ -732,6 +759,8 @@ class Island:
                 # match our normalization
                 thisIsland /= self.integral
                 chopThreshold /= self.integral
+                self.normalEnergies = self.energyScaleFactors / self.integral
+                self.pulses /= self.integral
             else:
                 # if we aren't normalizing, we should make it look like
                 # it came from an ADC, with a pedestal
@@ -754,6 +783,24 @@ class Island:
 
             self.time = theseTimes
             self.yValues = thisIsland
+            
+            """Maybe we want a different representation, with 1 at a pulse, 0 everywhere else"""
+            time_indeces = (self.timeOffsets + np.abs(self.time[0])) // self.samplingRateArtificial
+            simple_ys = np.zeros(shape=len(self.time))
+            
+            for n, index in enumerate(time_indeces):
+                simple_ys[int(index)] = self.normalEnergies[n]
+            """
+            n=0
+            for index in range(0, len(self.time)):
+                if(index in time_indeces):
+                    simple_ys.append(self.normalEnergies[n])
+                    n += 1
+                else:
+                    simple_ys.append(0)
+            """
+                
+            self.simple_ys = np.array(simple_ys)
 
             """lastly we can print a few parameters if requested"""
 
