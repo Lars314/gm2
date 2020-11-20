@@ -1,5 +1,5 @@
 """
-------------------------------- Behold  SplIland -------------------------------
+------------------------------- Behold  SplIland ------------------------------
 
 contains the spline and island classes for making artificial
 pileup islands. This code is the best thing to have ever been
@@ -8,13 +8,12 @@ a cookie because you are probably right.
 
 Written by Lars Borchert with extensive help from Josh LaBounty
 
-This dashed line is 80 characters long
---------------------------------------------------------------------------------
+This dashed line is 79 characters long
+-------------------------------------------------------------------------------
 """
 
 import numpy as np
-from scipy import stats
-
+import pandas as pd
 
 
 class Spline:
@@ -24,23 +23,20 @@ class Spline:
 
 
     ------------ Attributes ------------
-    
+
     splineY      : [ndarray] the y values in the spline. They are
                    normalized such that their integral in time
                    is equal to one
-                   
-    time         : [ndarray] the x values in the spline, which 
-                   are time
-    
-    samplingRate : [float] the sampling rate of the undigitized
-                   spline
-    
+
+    time         : [ndarray] the x values in the spline, which are time
+
+    samplingRate : [float] the sampling rate of the undigitized spline
+
     xtalNum      : [int] the crystal number of the template
     """
-#-------------------------------------------------------------------------------
-#------------------------------ Public  Functions ------------------------------
-#-------------------------------------------------------------------------------
-
+# -----------------------------------------------------------------------------
+# ----------------------------- Public  Functions -----------------------------
+# -----------------------------------------------------------------------------
 
     def peakTime(self):
         """
@@ -50,14 +46,12 @@ class Spline:
         index = np.argmax(self.splineY)
         return(self.time[index])
 
-
     def getPeak(self):
         """
         Gives the value of the peak of the spline
         """
         return np.max(self.splineY)
-    
-    
+
     def getNormalIntegral(self):
         """
         Gives the pulse integral of the peak-normalized spline
@@ -69,18 +63,18 @@ class Spline:
         return np.sum(scaledVals) * self.samplingRate
 
 
-#-------------------------------------------------------------------------------
-#------------------------------ Private Functions ------------------------------
-#-------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# ----------------------------- Private Functions -----------------------------
+# -----------------------------------------------------------------------------
 
-    
     def __init__(self, rSpline, xtalNum, caloNum):
+
         """
         rSpline : a ROOT spline, representing a normalized pulse
                   template
-        
+
         xtalNum : [int] the crystal number this spline is based from
-        
+
         caloNum : [int] the calo number this spline is based from
         """
 
@@ -102,63 +96,63 @@ class Spline:
         self.caloNum = caloNum
 
 
-
 class Island:
     """
     ------------ Attributes ------------
 
-    spline                  : [spline] the spline template from which the pulses
-                              in this island are generated
+    spline                  : [spline] the spline template from which the
+                              pulses in this island are generated
 
     nPulses                 : [int] the number of pulses in this island
-    
+
     energyCalibrationVal    : [float] the energy calibration constant of the
                               crystal from which the spline templates for this
-                              island come from. This constant is used to convert
-                              a pulse integral made over the island in ADC units
-                              to an energy in MeV
-                              
-    minTimeOffset           : [float] the artificial minimum time offset between
-                              pulses in this island in ns. Defaults to 0.0
-                              
+                              island come from. This constant is used to
+                              convert a pulse integral made over the island in
+                              ADC units to an energy in MeV
+
+    minTimeOffset           : [float] the artificial minimum time offset
+                              between pulses in this island in ns.
+                              Defaults to 0.0
+
     gainSag                 : [None] short term double pulse correction, well
                               mapped function, fix for non-recovered pixels, if
                               two events occur very close in time and pixels
                               have not recovered, we might see a lower energy
                               value. This is a correction function for that. It
                               is not important unless we want to be able to
-                              extract energies in our fitting, as it mainly just
-                              changed the energy scale factors. So it is None
-                              and not used, but kept as a reminder of this
-                              
+                              extract energies in our fitting, as it mainly
+                              just changed the energy scale factors. So it is
+                              None and not used, but kept as a reminder of this
+
     normalize               : [boolean] if this island is normalized or not.
                               Defaults to true
 
     chopThreshold           : [float] the threshold value in ADC units for when
                               the chopping algorithm decides where a pulse is.
                               Defaults to 50
-                              
+
     nPreSamples             : [int] the number of samples kept in chopping
                               before the first value above chopThreshold.
                               Defaults to 8
-                              
+
     nPostSamples            : [int] the number of samples kept in chopping
                               after the last value above chopThreshold.
                               Defaults to 18
-                              
+
     noise                   : [boolean] if this island has noise applied or
                               not. Defaults to true
-                              
+
     noiseLevel              : [float] the standard deviation of gaussian
                               noise in the sample, in ADC units. Defaults
                               to 4
-                              
+
     randomizeTailLength     : [boolean] if this island has a randomized tail
                               length or not. Defaults to false
-                              
+
     nTailSamples            : [int] the number of tail samples in the
                               island. defaults to 150
-                              
+
     samplingRateArtificial  : [float] the sampling rate of the island, which
                               is used in the digitization process. To match
                               the ADC, this defaults to 1.25ns and should
@@ -172,93 +166,90 @@ class Island:
 
     integral                : [float] the value of the integral of this
                               island; the area under its curve
-                              
+
     totalEnergy             : [float] the total energy, in MeV, of in this
                               island
-                              
+
     timeOffsets             : [list] the time offsets of each pulse in this
                               island from the original template pulse
-                              
+
     energyScaleFactors      : [list] the energy scaling factors of the
                               pulses in the island, in ADC units
-                              
+
     time                    : [ndarray] the time values in this island
 
     yValues                 : [ndarray] the y values in this island. These
                               might be in ADC units, or they might be
                               normalized, depending on the value of
                               normalize
-                              
+
     choppedTime             : [ndarray] the time values in this island
                               after chopping has been applied
-                              
+
     choppedYValues          : [ndarray] the y values in this island after
                               the chopping has been applied. Just like
                               yValues, these may be in ADC units or they
                               may be normalized
-                              
+
     pulses                  : [list] a list of ndarrays with the same shape as
                               time, with each array being an individual pulse
                               making up the island
-    
+
     simple_ys               : [ndarray] normalized energy values of pulses in
                               this island, put into a shape matching time, so
                               that we can plot time vs this and have sharp
                               peaks at exactly where pulses are
     """
-#-------------------------------------------------------------------------------
-#------------------------------ Public  Functions ------------------------------
-#-------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# ----------------------------- Public  Functions -----------------------------
+# -----------------------------------------------------------------------------
 
     def makeDF(self):
         """
         return a simple pandas dataframe
-        with time and yValues columns for 
+        with time and yValues columns for
         this island
         """
         d = {'time': self.time,
              'yValues': self.yValues}
-        df = pd.DataFrame(data = d)
+        df = pd.DataFrame(data=d)
         return(df)
 
 
-#-------------------------------------------------------------------------------
-#------------------------------ Private Functions ------------------------------
-#-------------------------------------------------------------------------------
-
+# -----------------------------------------------------------------------------
+# ----------------------------- Private Functions -----------------------------
+# -----------------------------------------------------------------------------
 
     def digitize_(self, verbosity, thisIsland, theseTimes):
+
         """
         convert the time sampling to match that of the ADC
         by default this should be 1.25ns sampling
         """
-        
+
         if(self.samplingRateArtificial is None):
             return thisIsland, theseTimes
-        
-        
+
         assert type(self.samplingRateArtificial) is float, print(
             """Error: Sampling rate must be a float.
             Currently {0:.2f}""".format(type(self.samplingRateArtificial)))
 
-
         if(verbosity):
-            print("Sampling this spline with a deltaT of " + \
-                  "{0:.2f} ns".format(self.samplingRateArtificial) )
-        
+            print("Sampling this spline with a deltaT of " +
+                  "{0:.2f} ns".format(self.samplingRateArtificial))
+
         sampledTimes = [theseTimes[0]]
 
         while(sampledTimes[-1] < [theseTimes[-1]]):
             sampledTimes.append(sampledTimes[-1] + self.samplingRateArtificial)
-       
+
         theseSamples = np.interp(sampledTimes, theseTimes, thisIsland)
-        
+
         thisIsland = np.array(theseSamples)
         theseTimes = np.array(sampledTimes)
-        
+
         return thisIsland, theseTimes
-    
-    
+
     def giveNPulses_(self, verbosity, minPulses, maxPulses):
         """
         figure out how many pulses there will be
@@ -266,20 +257,19 @@ class Island:
         """
         nPulses = np.random.randint(minPulses, maxPulses+1)
         if(verbosity):
-            print("The number of pulses in this island: " + \
+            print("The number of pulses in this island: " +
                   "{0}".format(nPulses))
         return nPulses
-            
-            
+
     def giveRandomTailLength_(self, verbosity):
         """
         figure out how long the tail will be
         never run this outside of initialization
         """
         nTailSamples = self.nTailSamples + np.random.randint(-50, 100)
-        if(verbosity): print(nTailSamples, " tail samples in this island")
+        if(verbosity):
+            print(nTailSamples, " tail samples in this island")
         return nTailSamples
-
 
     def giveTimeOffsets_(self, verbosity, deltaTmin, deltaTmax):
         """
@@ -288,12 +278,12 @@ class Island:
         this will take absolutely forever to run
         """
 
-        
         check = 0
         # keep looking until every combination of offsets has passed the check
         while(check < self.nPulses ** 2):
             # make some random time offsets
-            offsets = np.random.uniform(deltaTmin, deltaTmax, size=self.nPulses)
+            offsets = np.random.uniform(deltaTmin, deltaTmax,
+                                        size=self.nPulses)
             # now we need to make sure they have the right separation
             for i in range(0, len(offsets)):
                 for j in range(0, len(offsets)):
@@ -309,37 +299,35 @@ class Island:
                             check += 1
                     else:
                         check += 1
-                        
+
         if(verbosity):
             thisString = "["
             for offset in offsets:
                 thisString += " {0:.2f} ".format(offset)
             thisString += '] ns'
             print("The time offsets are: " + thisString)
-            print("The artificial minimum time offset is: " + \
+            print("The artificial minimum time offset is: " +
                   "{0:.2f} ns".format(self.minTimeOffset))
         return offsets
-            
-       
+
     def giveUniformEnergyScaleFactors_(self, verbosity, minEscale, maxEscale):
         """
         Gives energy scale factors in ADC units along a linear distribution
-        
+
         No energy is more likely than any other within the given bounds
         """
         energyScaleFactors = np.random.uniform(minEscale,
                                                maxEscale, size=self.nPulses)
-        
+
         if(verbosity):
             thisString = "["
-            for factor in factors:
+            for factor in energyScaleFactors:
                 thisString += " {0:.2f} ".format(factor)
             thisString += '] ADC units'
             print("The energy scale factors are: " + thisString)
-            
+
         return energyScaleFactors
-            
-            
+
     def giveEnergyScaleFactors_(self, verbosity, energyPeak,
                                 energyScale, calibConstant):
         """
@@ -355,41 +343,40 @@ class Island:
         between height and energy for some other pulse of the same shape. We
         choose this to be this template pulse, but of height one, which makes
         the calculation easy.
-        
+
         An older, redundant method is as follows. I am only keeping it for
         when I inevitably confuse myself and need to re-read it to understand.
-        
-        
+
         170 MeV = calibration constant * pulse integral, by definition
         calibIntegral = 170 / calibConstant
-        
+
         Energy is directly proportional to integral,
         is directly proportional to height
         calibHeight / calibIntegral = normalHeight / normalIntegral
         normalHeight == 1, by definition
         calibHeight = calibIntegral / normalIntegral
-        
+
         Energy is directly proportional to integral,
         is directly proportional to height
         thisHeight / calibHeight = thisEenrgy / calibEnergy
         calibEnergy == 170 by definition
         thisHeight = (thisEnergy *calibHeight) / (170)
-        
+
         calibHeight = calibIntegral / normalIntegral, from earlier
         thisHeight = (thisEnergy*calibIntegral/NormalIntegral) / (170)
-        
+
         calibIntegral = 170 / calibConstant, from earlier
         thisHeight = (thisEnergy*(170 / calibConstant)/normalIntegral) / (170)
         thisHeight = thisEnergy / (calibConstant * normalIntegral)
-        
+
         Energy is directly proportional to integral,
         is directly proportional to height
         thisHeight / normalHeight = thisEnergy / normalEnergy
         """
-        
+
         factors = []
         normalIntegral = self.spline.getNormalIntegral()
-        
+
         for pulse in range(0, self.nPulses):
             """
             generate an energy, in Mev
@@ -401,12 +388,13 @@ class Island:
             while(thisEnergy < 50):
                 thisEnergy = abs(np.random.normal(loc=energyPeak,
                                                   scale=energyScale))
-            
+
             # thisHeight/thisEnergy = 'normal'Height/'normal'Energy
-            thisHeight = thisEnergy / (calibConstant * normalIntegral * self.spline.getPeak())
-            
+            thisHeight = thisEnergy / (calibConstant * normalIntegral *
+                                       self.spline.getPeak())
+
             factors.append(thisHeight)
-        
+
         if(verbosity):
             thisString = "["
             for factor in factors:
@@ -414,8 +402,7 @@ class Island:
             thisString += '] ADC units'
             print("The energy scale factors are: " + thisString)
         return factors
-        
-  
+
     def giveNoise_(self, verbosity, thisIsland):
         """
         adds gaussian noise into the island, in ADC units. Do not use this
@@ -424,10 +411,9 @@ class Island:
         thisIsland += np.random.normal(0, self.noiseLevel,
                                        size=thisIsland.size)
         if(verbosity):
-            print("The noise level standard deviation in this island: " + \
+            print("The noise level standard deviation in this island: " +
                   "{0:.2f}".format(self.noiseLevel))
         return thisIsland
-        
 
     def chop_(self, times, island, critValue, preSamples, postSamples):
         """
@@ -440,19 +426,19 @@ class Island:
         startIndex = None
         endIndex = None
         cuts = []
-        
+
         # loop through all the values
         for index, val in enumerate(island):
             if(val > critValue):
                 # for something over our threshold, make an endIndex
                 endIndex = index + postSamples
-                
+
                 # make sure we don't get out of bounds errors
                 if(endIndex >= len(island)):
                     cuts.append(len(island))
                 else:
                     cuts.append(endIndex)
-                
+
                 # if this is the first threshold passer, get the startIndex
                 if(startIndex is None):
                     if(index - preSamples > 0):
@@ -461,7 +447,6 @@ class Island:
                         startIndex = 0
 
         return times[startIndex:cuts[-1]], island[startIndex:cuts[-1]]
-    
 
     def scaleADC_(self, verbosity, island):
         """
@@ -474,18 +459,16 @@ class Island:
         self.pedestal = np.random.normal(loc=1750, scale=2.5) * (-1)
 
         if(verbosity):
-            print("The pedestal value of this island is " + \
+            print("The pedestal value of this island is " +
                   "{0:.2f}".format(self.pedestal))
-            
+
         return (island + self.pedestal)
-    
-    
+
     def integrate_(self, time, island):
         """
         Returns the integral of the island, the area under the curve
         """
         return (np.sum(island) * (time[1]-time[0]))
-    
 
     def energize_(self, calibVal):
         """
@@ -493,30 +476,29 @@ class Island:
         """
         return (self.integral * calibVal)
 
-
     def __init__(self, referenceSpline,
-                 minPulses = 1,
-                 maxPulses = 4,
-                 useUniformEscale = False,
-                 minEscale = 50,
+                 minPulses=1,
+                 maxPulses=4,
+                 useUniformEscale=False,
+                 minEscale=50,
                  maxEscale=2400,
-                 energyCalibrationVal = 0.3,
-                 energyPeak = 0,
-                 energyScale = 600,
-                 deltaTmin = 0,
-                 deltaTmax = 25,
-                 minTimeOffset = 0,
-                 gainSag = None,
-                 verbosity = False,
-                 normalize = True,
-                 chop = True,
-                 chopThreshold = 50,
-                 nPreSamples = 8,
-                 nPostSamples = 18,
-                 noise = True,
-                 noiseLevel = 4,
-                 nTailSamples = 150,
-                 randomizeTailLength = False,
+                 energyCalibrationVal=0.3,
+                 energyPeak=0,
+                 energyScale=600,
+                 deltaTmin=0,
+                 deltaTmax=25,
+                 minTimeOffset=0,
+                 gainSag=None,
+                 verbosity=False,
+                 normalize=True,
+                 chop=True,
+                 chopThreshold=50,
+                 nPreSamples=8,
+                 nPostSamples=18,
+                 noise=True,
+                 noiseLevel=4,
+                 nTailSamples=150,
+                 randomizeTailLength=False,
                  samplingRateArtificial=1.25):
         """
         referenceSpline        : [spline] the spline template from which the
@@ -541,15 +523,15 @@ class Island:
 
         energyCalibrationVal   : [float] the energy calibration constant of the
                                  crystal from which the spline templates for
-                                 this island come from. This constant is used to
-                                 convert a pulse integral made over the island
-                                 in ADC units to an energy in MeV
+                                 this island come from. This constant is used
+                                 to convert a pulse integral made over the
+                                 island in ADC units to an energy in MeV
 
         energyPeak             : [float] the peak of the gaussian distribution
                                  of pulse energies, in MeV. Defaults to zero
 
-        energyScale            : [float] the standard deviation of energy of the
-                                 pulses, in MeV. Defaults to 600
+        energyScale            : [float] the standard deviation of energy of
+                                 the pulses, in MeV. Defaults to 600
 
         deltaTmin              : [float] the smallest value on the time axis
                                  where a pulse might be placed. Defaults to
@@ -562,13 +544,13 @@ class Island:
                                  between pulses in this island in ns. Defaults
                                  to 0.0
 
-        gainSag                : [None] short term double pulse correction, well
-                                 mapped function, fix for non-recovered pixels:
-                                 if super close and pixels haven't recovered, we
-                                 might see a lower e value. Not super important,
-                                 unless you want to also extract energies,
-                                 because this has the main effect of just
-                                 changing energy scale factors
+        gainSag                : [None] short term double pulse correction
+                                 well mapped function, fix for non-recovered
+                                 pixels: if super close and pixels haven't
+                                 recovered, we might see a lower e value. Not
+                                 super important, unless you want to also
+                                 extract energies, because this has the main
+                                 effect of just changing energy scale factors
 
         verbosity              : [boolean] if you want a bunch of output on the
                                  parameters of this island. Defaults to false
@@ -579,8 +561,8 @@ class Island:
         chop                   : [boolean] if we want to chop this island or
                                  not, which is cutting it down in time to just
                                  focus on where the pulses are. This does not
-                                 change the time or yValues parameters, but puts
-                                 a chopped version into choppedTime and
+                                 change the time or yValues parameters, but
+                                 puts a chopped version into choppedTime and
                                  choppedYValues attributes. Defaults to True
 
         chopThreshold:         : [float] the threshold value in ADC units for
@@ -638,37 +620,38 @@ class Island:
         self.choppedYValues = []
         self.pulses = []
         self.simple_ys = []
-        
+
         """setup the spine variables"""
 
         splineTimes = self.spline.time
         splineShape = self.spline.splineY / self.spline.getPeak()
         splineSamplingRate = self.spline.samplingRate
-        
+
         """figure out how many pulses there will be"""
 
         self.nPulses = self.giveNPulses_(verbosity, minPulses, maxPulses)
-            
+
         """randomize the length of the tail samples"""
 
         if(randomizeTailLength):
             self.nTailSamples = self.giveRandomTailLength_(verbosity)
-                
+
         """define the y and t arrays"""
 
         # before putting pulses in, yValues in thisIsland are just zeros
         thisIsland = np.append(np.zeros_like(self.spline.splineY),
                                np.zeros(self.nTailSamples))
-        
+
         # the time array is the original one, plus
         # however much else we want based on nTailSamples
         theseTimes = np.append(splineTimes,
-                               np.array([splineTimes[splineTimes.size-1] + \
-                                        splineSamplingRate*i \
-                                        for i in range(1,self.nTailSamples+1)]))
+                               np.array([splineTimes[splineTimes.size-1] +
+                                        splineSamplingRate*i
+                                        for i in range(1,
+                                                       self.nTailSamples+1)]))
         emptyTimes = theseTimes.copy()
         emptyIsland = thisIsland.copy()
-        
+
         """if nPulses is zero, we can skip almost everything"""
 
         if(self.nPulses == 0):
@@ -690,15 +673,15 @@ class Island:
 
             if (useUniformEscale):
                 self.energyScaleFactors = \
-                self.giveUniformEnergyScaleFactors_(verbosity, 
-                                                    minEscale, 
-                                                    maxEscale)
+                    self.giveUniformEnergyScaleFactors_(verbosity,
+                                                        minEscale,
+                                                        maxEscale)
             else:
                 self.energyScaleFactors = \
-                self.giveEnergyScaleFactors_(verbosity, 
-                                             energyPeak, 
-                                             energyScale,
-                                             self.energyCalibrationVal)
+                    self.giveEnergyScaleFactors_(verbosity,
+                                                 energyPeak,
+                                                 energyScale,
+                                                 self.energyCalibrationVal)
 
             """create the time offsets for each pulse """
 
@@ -708,21 +691,21 @@ class Island:
 
             """put the pulses together into thisIsland"""
 
-            pulses = [] 
+            pulses = []
             for pulseIndex, deltaT in enumerate(self.timeOffsets):
                 deltaT /= 2
                 sample_offset = int(np.floor(deltaT))
                 splineI = np.interp(splineTimes+deltaT-sample_offset,
                                     splineTimes, splineShape) * \
-                          self.energyScaleFactors[pulseIndex]
-                
+                    self.energyScaleFactors[pulseIndex]
+
                 thisPulse = emptyIsland.copy()
-                thisPulse[sample_offset:sample_offset + \
+                thisPulse[sample_offset:sample_offset +
                           len(splineI)] += splineI
 
-                thisIsland[sample_offset:sample_offset + \
+                thisIsland[sample_offset:sample_offset +
                            len(splineI)] += splineI
-                
+
                 pulses.append(thisPulse)
 
             """get the sampling right"""
@@ -730,8 +713,7 @@ class Island:
             thisIsland, theseTimes = self.digitize_(verbosity,
                                                     thisIsland,
                                                     theseTimes)
-            
-            
+
             for pulse in pulses:
                 thisPulse, someTimes = self.digitize_(False,
                                                       pulse,
@@ -742,13 +724,12 @@ class Island:
 
             if(self.noise):
                 thisIsland = self.giveNoise_(verbosity, thisIsland)
-            
-                
+
             """compute this island's integral and energy"""
 
             self.integral = self.integrate_(theseTimes, thisIsland)
             self.totalEnergy = self.energize_(self.energyCalibrationVal)
-            
+
             """
             normalize if needed
             chopping threshold needs to be scaled accordingly
@@ -766,7 +747,7 @@ class Island:
                 # it came from an ADC, with a pedestal
                 thisIsland = self.scaleADC_(verbosity, thisIsland)
                 chopThreshold += self.pedestal
-            
+
             """simulate island chopping, cut to around the pulses"""
 
             if (chop):
@@ -783,11 +764,13 @@ class Island:
 
             self.time = theseTimes
             self.yValues = thisIsland
-            
-            """Maybe we want a different representation, with 1 at a pulse, 0 everywhere else"""
-            time_indeces = (self.timeOffsets + np.abs(self.time[0])) // self.samplingRateArtificial
+
+            """Maybe we want a different representation,
+            with 1 at a pulse, 0 everywhere else"""
+            time_indeces = (self.timeOffsets + np.abs(self.time[0])) // \
+                self.samplingRateArtificial
             simple_ys = np.zeros(shape=len(self.time))
-            
+
             for n, index in enumerate(time_indeces):
                 simple_ys[int(index)] = self.normalEnergies[n]
             """
@@ -799,23 +782,23 @@ class Island:
                 else:
                     simple_ys.append(0)
             """
-                
+
             self.simple_ys = np.array(simple_ys)
 
             """lastly we can print a few parameters if requested"""
 
             if(verbosity):
-                print("Spline template crystal number: "+ \
+                print("Spline template crystal number: " +
                       "{0}".format(self.spline.xtalNum))
 
-                print("Spline template peak: " + \
+                print("Spline template peak: " +
                       "{0:.2f}".format(self.spline.getPeak()))
 
-                print("Crystal energy calibration constant: " + \
+                print("Crystal energy calibration constant: " +
                       "{0:.2f}".format(self.energyCalibrationVal))
 
-                print("Pulse integral: " + \
+                print("Pulse integral: " +
                       "{0:.2f}".format(self.integral))
 
-                print("'Q-Method-ish' Island 'total' energy: " + \
+                print("'Q-Method-ish' Island 'total' energy: " +
                       "{0:.2f} MeV".format(self.totalEnergy))
