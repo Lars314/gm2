@@ -14,7 +14,7 @@ import numpy as np
 import fclParse
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-from scipy import integrate
+# from scipy import integrate
 
 
 class Spline:
@@ -130,7 +130,12 @@ class Xtal:
 # -----------------------------------------------------------------------------
 # ----------------------------- Public  Functions -----------------------------
 # -----------------------------------------------------------------------------
-
+    def energize(self, impact_time, xtal_energy):
+        """
+        Put energy into this crystal. The energy is calculated at the
+        calorimeter level
+        """
+        self.impacts.append([impact_time, xtal_energy])
 # -----------------------------------------------------------------------------
 # ----------------------------- Private Functions -----------------------------
 # -----------------------------------------------------------------------------
@@ -165,11 +170,6 @@ class Xtal:
 
         """
 
-    def energize_():
-        """
-
-        """
-
     def __init__(self, caloNum, x, y, xtalNum):
         """
         caloNum : [int] the number of the calorimeter where this crystal lives
@@ -184,6 +184,7 @@ class Xtal:
         self.x = x
         self.y = y
         self.xtalNum = xtalNum
+        self.impacts = []
 
         self.energyCalibrationVal = \
             fclParse.fclReader("mipEnergyCalibration_" +
@@ -244,6 +245,7 @@ class Calorimeter:
         Deletes all the impacts, only for debugging!!!
         """
         self.impacts = []
+        self.reset_xtalGrid_()
 
     def getNonZeroXtals(self):
         """
@@ -251,8 +253,8 @@ class Calorimeter:
         the island
         """
 
-    def draw(self, legend=False, do_moliere_radius=False,
-             show_hit_xtals=False):
+    def draw(self, legend=False, show_moliere_radius=False,
+             show_hit_xtals=False, show_xtal_energies=False):
         """
         Give a matplotlib representation of this calorimeter, and show where
         the particles are, as well as their energies. This function is for
@@ -271,7 +273,8 @@ class Calorimeter:
             this_color = next(ax._get_lines.prop_cycler)['color']
             ax.plot(impact["x"], impact["y"],
                     marker='o', markersize=10, color=this_color,
-                    label="{0:.2f} MeV".format(impact["energy"]))
+                    label="{0:.2f} MeV {1:.2f} ns".format(impact["energy"],
+                                                          impact['time']))
 
             # ax.plot(impact["ring_x"], impact["ring_y"], color=this_color)
             # ax.plot(impact["small_ring_x"], impact["small_ring_y"],
@@ -293,7 +296,19 @@ class Calorimeter:
                                              facecolor='xkcd:light grey')
                     ax.add_patch(rect)
 
-            if (do_moliere_radius):
+            if (show_xtal_energies):
+                for xtal in impact["hit_crystals"]:
+                    xtal_events = self.xtalGrid[xtal[0]][xtal[1]].impacts
+                    energies_list = []
+                    for event in xtal_events:
+                        energies_list.append(event[1])
+                    energy_string = ""
+                    for val in energies_list:
+                        energy_string += "{0} MeV \n".format(int(val))
+                    ax.text(x=xtal[0]+0.1, y=xtal[1],
+                            s=energy_string)
+
+            if (show_moliere_radius):
                 ax.add_artist(moliere_circle)
                 ax.add_artist(moliere_circle_2)
 
@@ -306,12 +321,12 @@ class Calorimeter:
 # -----------------------------------------------------------------------------
 # ----------------------------- Private Functions -----------------------------
 # -----------------------------------------------------------------------------
-    def energy_density_(self, r):
+    def get_energy_density_(self, r):
         """
         The energy density of the impacted particle over the region of impact.
         This will change, 1/r is definitely not right but easy for testing
         """
-        return 1 / r
+        return 1 / (4 * np.pi * r**2)
 
     def get_hit_crystals_(self):
         """
@@ -319,48 +334,121 @@ class Calorimeter:
         # first, let's just flag where the moliere circle overlaps crystals
         # not all of these crystals will end up mattering, as it is likely
         # that the edge ones will get less than 50 MeV
+
+        # loop through the impacts
         for impact in self.impacts:
             impact["hit_crystals"] = []
+            # loop for the 2nd Moliere radius
             for i in range(0, len(impact["ring_x"])):
+                # for this location on the Moliere ring, take note of the
+                # crystal coordinate
                 this_x = int(impact["ring_x"][i])
                 this_y = int(impact["ring_y"][i])
+                # check that this crystal actually exists on the calo face
+                if ((this_x >= 9) or (this_y >= 6)):
+                    continue
+                # check if the crystal has already been counted, count it
                 if ((this_x, this_y) not in impact["hit_crystals"]):
                     impact["hit_crystals"].append((this_x, this_y))
+            # loop for the 1st Moliere radius
             for i in range(0, len(impact["small_ring_x"])):
+                # for this location on the Moliere ring, take note of the
+                # crystal coordinate
                 this_x = int(impact["small_ring_x"][i])
                 this_y = int(impact["small_ring_y"][i])
+                # check that this crystal actually exists on the calo face
+                if ((this_x >= 9) or (this_y >= 6)
+                   or (this_x < 0) or (this_y < 0)):
+                    continue
+                # check if the crystal has already been counted, count it
                 if ((this_x, this_y) not in impact["hit_crystals"]):
                     impact["hit_crystals"].append((this_x, this_y))
-            """
-            # now that we have our overlaps, we need to go into each one and
-            # integrate with our energy density over the area of the overlap
-            f = lambda y, x: 1 / np.sqrt((x**2) + (y**2))
-            for crystal in impact["hit_crystals"]:
-                const_A = np.sqrt(((crystal[0] - impact["x"])**2)
-                                  + ((crystal[1] - impact["y"])**2))
 
-                energy = integrate.dblquad(f, 0, x_c,
-                                           lambda x: 0, lambda x: y_c)
-            """
+    def get_crystal_energy_(self, xtal_loc, impact_loc, impact_energy):
+        """
+        For some crystal, hit location, and hit energy, we calculate how much
+        energy was deposited into this crystal.
+
+        Currently this method is inaccurate. We are assuming that the energy
+        is distributed evenly accross the face of the crystal, with the energy
+        density of the center of the crystal. In reality, we would need to
+        integrate the energy density of the impact over the surface of the
+        crystal. Additional complications come from energy loss at the borders
+        of crystals. These are ignored. We can do this for now because we are
+        mostly interested in the number of impacts, not the energy.
+        """
+        imp_x = impact_loc[0]
+        imp_y = impact_loc[1]
+        xtal_x = xtal_loc[0] + 0.5
+        xtal_y = xtal_loc[1] + 0.5
+        r = np.sqrt(((xtal_x - imp_x)**2) + ((xtal_y - imp_y)**2))
+        e_density = self.get_energy_density_(r)
+
+        # crystal has area of 1
+        return e_density * impact_energy
+
+    def build_crystals_(self):
+        """
+        Using our lists of impacted crystals, create crystal objects with the
+        correct energy depositions. For multiple impacts, crystals may appear
+        twice, once in each impact list. But this is what we want. The energy
+        of two impacts on one crystal will add in that crystal, so we
+        definitely want to look at both situations.
+        """
+        # go through each impact
+        for impact in self.impacts:
+            # if we have already sent information from this impact to the
+            # crystals, we should not do it again
+            if impact['time'] not in self.impacts_registered_by_xtals:
+                self.impacts_registered_by_xtals.append(impact['time'])
+                # go through each crystal
+                for xtal in impact['hit_crystals']:
+                    impact_loc = (impact['x'], impact['y'])
+                    xtal_energy = self.get_crystal_energy_(xtal, impact_loc,
+                                                           impact['energy'])
+                    self.xtalGrid[xtal[0]][xtal[1]].energize(impact['time'],
+                                                             xtal_energy)
+
+    def reset_xtalGrid_(self):
+        """
+        Creates a fresh grid of crystals. Use when initializing the calo, or
+        when clearing it of impacts.
+        """
+        xtalGrid = []
+        for column in range(0, 9):
+            this_column = []
+            for row in range(0, 6):
+                this_num = (column * 6) + (row)
+                this_xtal = Xtal(self.caloNum, x=column+1, y=row+1,
+                                 xtalNum=this_num)
+                this_column.append(this_xtal)
+            xtalGrid.append(this_column)
+        self.xtalGrid = xtalGrid
 
     def __init__(self, caloNum):
         """
         caloNum  : [int] the number of this calorimeter, 1 to 24
         """
-        # create our grid
-        xtalGrid = []
-        for column in range(0, 9):
-            this_column = []
-            for row in range(0, 6):
-                this_xtal = Xtal(caloNum, x=column+1, y=row+1,
-                                 xtalNum=1)
-                this_column.append(this_xtal)
-            xtalGrid.append(this_column)
-
-        self.xtalGrid = xtalGrid
         self.caloNum = caloNum
         self.moliere_radius = 1.8 / 2.54
         self.impacts = []
+        self.impacts_registered_by_xtals = []
+
+        # create our grid
+        self.reset_xtalGrid_()
+
+    def __repr__(self):
+        summary = ""
+
+        for columm in self.xtalGrid:
+            for xtal in columm:
+                this_report = "Crystal {0} at {1} has \
+[time (ns), energy (MeV)]: {2}".format(xtal.xtalNum,
+                                       (xtal.x, xtal.y),
+                                       xtal.impacts)
+                summary += this_report + "\n\n"
+
+        return summary
 
 
 class Island:
@@ -535,9 +623,9 @@ class Particle:
 
         if (energy is None):
             if (e_df is None):
-                print("No particle energy provided," +
-                      "defaulting to energy of 1MeV")
-                self.energy = 2400
+                print("No particle energy provided, " +
+                      "defaulting to energy of 3.094 GeV")
+                self.energy = 3094
             else:
                 index = np.random.randint(low=0, high=len(e_df))
                 self.energy = e_df[index]
@@ -548,3 +636,12 @@ class Particle:
             self.time = np.random.uniform(low=deltaTmin, high=deltaTmax)
         else:
             self.time = time
+
+    def __repr__(self):
+        summary = "\n----- New Particle -----\n"
+
+        summary += "(x, y) : ({0:.2f}, {1:.2f})\n".format(self.x, self.y)
+        summary += "Energy : {0:.2f} MeV\n".format(self.energy)
+        summary += "Time : {0:.2f} ns\n".format(self.time)
+
+        return summary
