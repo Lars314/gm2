@@ -195,8 +195,8 @@ class Xtal:
                                                thisTrace,
                                                theseTimes)
 
-        emptyTimes = theseTimes.copy()
         for pulse in pulses:
+            emptyTimes = theseTimes.copy()[:len(pulse)]
             thisPulse, someTimes = self.digitize_(False, pulse, emptyTimes)
 
         """add gaussian noise to each sample"""
@@ -230,7 +230,6 @@ class Xtal:
         """now we're done!"""
         self.time = theseTimes
         self.trace = thisTrace
-
 
 # -----------------------------------------------------------------------------
 # ----------------------------- Private Functions -----------------------------
@@ -328,6 +327,12 @@ class Xtal:
                     else:
                         startIndex = 0
 
+        if (self.verbosity):
+            print("This trace was chopped with threshold " +
+                  "{0:.2f}\n".format(self.chopThreshold) +
+                  "and with chop indices {0}".format(startIndex) +
+                  " and {0}".format(cuts[-1]))
+
         # we only care about the endcaps, we have only one start value, but a
         # list of endIndex vales. But we only want the very last one in that
         # list
@@ -355,10 +360,22 @@ class Xtal:
         """
         return (np.sum(trace) * (time[1]-time[0]))
 
-    def __init__(self, caloNum, x, y, xtalNum, normalize, chopThreshold,
-                 nPreSamples, nPostSamples, noise, randomizeTailLength,
-                 nTailSamples, samplingRateArtificial, pedestal, doChop,
-                 verbosity):
+    def __init__(self,
+                 caloNum=None,
+                 x=None,
+                 y=None,
+                 xtalNum=None,
+                 normalize=True,
+                 chopThreshold=50,
+                 nPreSamples=8,
+                 nPostSamples=18,
+                 noise=True,
+                 randomizeTailLength=False,
+                 nTailSamples=150,
+                 samplingRateArtificial=1.25,
+                 pedestal=None,
+                 doChop=True,
+                 verbosity=False):
         """
         caloNum : [int] the number of the calorimeter where this crystal lives
 
@@ -397,8 +414,9 @@ class Xtal:
 
         self.noiseLevel = \
             fclParse.fclReader("gm2pedestals_run3formatRE.fcl")[
-                               'pedestalConstantsLaserRun3']['calo15'][
-                               'xtal' + xtalNum]['noiseLevel']
+                               'pedestalConstantsLaserRun3'][
+                               'calo'+str(caloNum)]['xtal' + str(xtalNum)][
+                               'noiseLevel']
 
         self.energyCalibrationVal = \
             fclParse.fclReader("mipEnergyCalibration_" +
@@ -407,7 +425,8 @@ class Xtal:
                                'calo'+str(caloNum)]['xtal'+str(xtalNum)]
 
         f = r.TFile("./calotemplate15.root")
-        self.template = Spline(rspline=f.Get("masterSpline_xtal"+self.xtalNum),
+        self.template = Spline(rSpline=f.Get("masterSpline_xtal" +
+                                             str(self.xtalNum)),
                                xtalNum=self.xtalNum, caloNum=self.caloNum)
 
 
@@ -472,7 +491,8 @@ class Calorimeter:
         """
 
     def draw(self, legend=False, show_moliere_radius=False,
-             show_hit_xtals=False, show_xtal_energies=False):
+             show_hit_xtals=False, show_xtal_energies=False,
+             show_xtal_num=False, show_traces=False):
         """
         Give a matplotlib representation of this calorimeter, and show where
         the particles are, as well as their energies. This function is for
@@ -526,6 +546,13 @@ class Calorimeter:
                     ax.text(x=xtal[0]+0.1, y=xtal[1],
                             s=energy_string)
 
+            if (show_traces):
+                # loop over columns
+                for i in range(0, len(self.xtalGrid)):
+                    # loop over rows
+                    for j in range(0, len(self.xtalGrid[i])):
+                        continue
+
             if (show_moliere_radius):
                 ax.add_artist(moliere_circle)
                 ax.add_artist(moliere_circle_2)
@@ -544,7 +571,7 @@ class Calorimeter:
         The energy density of the impacted particle over the region of impact.
         This will change, 1/r is definitely not right but easy for testing
         """
-        return 1 / (4 * np.pi * r**2)
+        return 1 / (1 + 4 * np.pi * r**2)
 
     def get_hit_crystals_(self):
         """
@@ -556,6 +583,15 @@ class Calorimeter:
         # loop through the impacts
         for impact in self.impacts:
             impact["hit_crystals"] = []
+            # first check the center of the impact. This is important because
+            # without checking here, an impact directly centered on one crystal
+            # can get skipped by just checking the rings
+            this_x = int(impact['x'])
+            this_y = int(impact['y'])
+            if ((this_x >= 9) or (this_y >= 6)):
+                continue
+            if ((this_x, this_y) not in impact["hit_crystals"]):
+                impact["hit_crystals"].append((this_x, this_y))
             # loop for the 2nd Moliere radius
             for i in range(0, len(impact["ring_x"])):
                 # for this location on the Moliere ring, take note of the
@@ -605,7 +641,7 @@ class Calorimeter:
         # crystal has area of 1
         return e_density * impact_energy
 
-    def build_crystals_(self):
+    def build_crystal_impacts_(self):
         """
         Using our lists of impacted crystals, create crystal objects with the
         correct energy depositions. For multiple impacts, crystals may appear
@@ -627,23 +663,60 @@ class Calorimeter:
                     self.xtalGrid[xtal[0]][xtal[1]].energize(impact['time'],
                                                              xtal_energy)
 
+    def build_impacted_crystals_(self):
+        """
+        Go through the xtalGrid, and build any non empty crystals traces
+        """
+        for column in self.xtalGrid:
+            for xtal in column:
+                if xtal.impacts:
+                    if (self.verbosity):
+                        print("building trace for xtal " +
+                              "{0}".format(xtal.xtalNum))
+                    xtal.build_trace()
+
     def reset_xtalGrid_(self):
         """
         Creates a fresh grid of crystals. Use when initializing the calo, or
         when clearing it of impacts.
         """
         xtalGrid = []
+        smallName = self.samplingRateArtificial
         for column in range(0, 9):
             this_column = []
             for row in range(0, 6):
-                this_num = (column * 6) + (row)
-                this_xtal = Xtal(self.caloNum, x=column+1, y=row+1,
-                                 xtalNum=this_num)
+                this_num = (row * 9) + (column)
+                this_xtal = Xtal(caloNum=self.caloNum,
+                                 x=column+1,
+                                 y=row+1,
+                                 xtalNum=this_num,
+                                 normalize=self.normalize,
+                                 chopThreshold=self.chopThreshold,
+                                 nPreSamples=self.nPreSamples,
+                                 nPostSamples=self.nPostSamples,
+                                 noise=self.noise,
+                                 randomizeTailLength=self.randomizeTailLength,
+                                 nTailSamples=self.nTailSamples,
+                                 samplingRateArtificial=smallName,
+                                 doChop=self.doChop,
+                                 verbosity=self.verbosity)
+
                 this_column.append(this_xtal)
             xtalGrid.append(this_column)
         self.xtalGrid = xtalGrid
 
-    def __init__(self, caloNum):
+    def __init__(self,
+                 caloNum,
+                 normalize=True,
+                 chopThreshold=50,
+                 nPreSamples=8,
+                 nPostSamples=18,
+                 noise=True,
+                 randomizeTailLength=False,
+                 nTailSamples=150,
+                 samplingRateArtificial=1.25,
+                 doChop=True,
+                 verbosity=False):
         """
         caloNum  : [int] the number of this calorimeter, 1 to 24
         """
@@ -651,6 +724,19 @@ class Calorimeter:
         self.moliere_radius = 1.8 / 2.54
         self.impacts = []
         self.impacts_registered_by_xtals = []
+
+        # attributes for all crystals in this calo, that need to be sent to
+        # the crystal constructor
+        self.normalize = normalize
+        self.chopThreshold = chopThreshold
+        self.nPreSamples = nPreSamples
+        self.nPostSamples = nPostSamples
+        self.noise = noise
+        self.randomizeTailLength = randomizeTailLength
+        self.nTailSamples = nTailSamples
+        self.samplingRateArtificial = samplingRateArtificial
+        self.doChop = doChop
+        self.verbosity = verbosity
 
         # create our grid
         self.reset_xtalGrid_()
