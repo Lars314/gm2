@@ -14,7 +14,7 @@ import numpy as np
 import fclParse
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-# from scipy import integrate
+import ROOT as r
 
 
 class Spline:
@@ -121,11 +121,11 @@ class Xtal:
 
     eCalVal : [float] the energy calibration value for this crystal
 
-    trace
+    trace   :
 
-    times
+    times   :
 
-    energies :
+    impacts :
     """
 # -----------------------------------------------------------------------------
 # ----------------------------- Public  Functions -----------------------------
@@ -136,41 +136,229 @@ class Xtal:
         calorimeter level
         """
         self.impacts.append([impact_time, xtal_energy])
+
+    def build_trace(self):
+        """
+        Finalizes the crystal, gets the trace set up. In version one this
+        was done in the constructor, but we need to be able to add energy
+        values to this crystal before building it.
+        """
+
+        """randomize the length of the tail samples"""
+
+        if(self.randomizeTailLength):
+            self.nTailSamples = self.giveRandomTailLength_()
+
+        # before putting pulses in, trace values are just zero
+        thisTrace = np.append(np.zeros_like(self.template.trace),
+                              np.zeros(self.nTailSamples))
+
+        """setup the template variables"""
+
+        templateTimes = self.template.time
+        templateSamplingRate = self.template.samplingRate
+
+        """define the trace and time arrays"""
+
+        # the time array is the original one, plus however much else we want
+        # based on nTailSamples
+        theseTimes = np.append(templateTimes,
+                               np.array([templateTimes[templateTimes.size-1] +
+                                         templateSamplingRate*i
+                                         for i in range(1,
+                                                        self.nTailSamples+1)]))
+
+        """Now we can put the pulses together"""
+
+        templateShape = self.template.trace / self.template.getPeak()
+        emptyTrace = thisTrace.copy()
+
+        pulses = []
+        for event in self.impacts:
+            deltaT = event[0] / 2
+            energy = event[1]
+            height = self.convertToADC_(energy)
+
+            sample_offset = int(np.floor(deltaT))     # redundant?
+            splineI = np.interp(templateTimes + deltaT - sample_offset,
+                                templateTimes, templateShape) * height
+
+            thisTrace[sample_offset:sample_offset + len(splineI)] += splineI
+
+            thisPulse = emptyTrace.copy()
+            thisPulse[sample_offset:sample_offset + len(splineI)] += splineI
+            pulses.append(thisPulse)
+
+        """get the sampling right"""
+
+        thisTrace, theseTimes = self.digitize_(self.verbosity,
+                                               thisTrace,
+                                               theseTimes)
+
+        emptyTimes = theseTimes.copy()
+        for pulse in pulses:
+            thisPulse, someTimes = self.digitize_(False, pulse, emptyTimes)
+
+        """add gaussian noise to each sample"""
+
+        if (self.noise):
+            thisTrace = self.giveNoise_(thisTrace)
+
+        """compute this islands integral"""
+
+        self.integral = self.integrate_(theseTimes, thisTrace)
+
+        """normalize if needed"""
+
+        if (self.normalize):
+            # if we are normalizing, our chopping threshold needs to match
+            # our normalization
+            thisTrace /= self.integral
+            self.chopThreshold /= self.integral
+            self.pulses /= self.integral
+        else:
+            # if we don't want to normalize, we should make it look like it
+            # came from an ADC, with a pedestal
+            thisTrace = self.scaleADC_(thisTrace)
+
+        """simulate island chopping, cut to around the pulses"""
+
+        if (self.doChop):
+            self.choppedTime, self.choppedTrace = self.chop_(theseTimes,
+                                                             thisTrace)
+
+        """now we're done!"""
+        self.time = theseTimes
+        self.trace = thisTrace
+
+
 # -----------------------------------------------------------------------------
 # ----------------------------- Private Functions -----------------------------
 # -----------------------------------------------------------------------------
 
-    def digitize():
+    def digitize_(self, verbosity, thisTrace, theseTimes):
         """
-
+        convert the time sampling to match that of the ADC
+        by default this should be 1.25ns sampling
         """
+        if (self.samplingRateArtificial is None):
+            return thisTrace, theseTimes
 
-    def giveRandomTailLength_():
+        assert type(self.samplingRateArtificial) is float, print(
+            """Error: Sampling rate must be a float.
+            Currently {0}""".format(type(self.samplingRateArtificial))
+        )
+
+        if (verbosity):
+            print("Sampling this trace with a deltaT of " +
+                  "{0:.2f} ns".format(self.samplingRateArtificial))
+
+        sampledTimes = [theseTimes[0]]
+
+        while(sampledTimes[-1] < [theseTimes[-1]]):
+            sampledTimes.append(sampledTimes[-1] + self.samplingRateArtificial)
+
+        theseSamples = np.interp(sampledTimes, theseTimes, thisTrace)
+
+        thisTrace = np.array(theseSamples)
+        theseTimes = np.array(sampledTimes)
+
+        return thisTrace, theseTimes
+
+    def giveRandomTailLength_(self):
         """
-
+        figure out how long the tail will be
+        never run this outside of initialization
         """
+        nTailSamples = self.nTailSamples + np.random.randint(-50, 100)
+        if(self.verbosity):
+            print(nTailSamples, " tail samples in this island")
+        return nTailSamples
 
-    def giveNoise_():
+    def convertToADC_(self, energy):
         """
-
+        convert some energy to ADC units for this crystal
         """
+        normalIntegral = self.template.getNormalIntegral()
+        thisHeight = energy / (self.energyCalibrationVal * normalIntegral *
+                               self.template.getPeak())
+        return thisHeight
 
-    def chop_():
+    def giveNoise_(self, thisTrace):
         """
-
+        adds gaussian noise into the island, in ADC units. Do not use this
+        function unless you are operating in ADC units
         """
+        thisTrace += np.random.normal(0, self.noiseLevel, size=thisTrace.size)
 
-    def scaleADC():
+        if (self.verbosity):
+            print("The noise level standard deviation in this trace: " +
+                  "{0:.2f}".format(self.noiseLevel))
+
+        return thisTrace
+
+    def chop_(self, times, trace):
         """
-
+        Performs simulated island chopping. We don't want a bunch of zero
+        values if we have many many data, so we cut islands
+        down to just the interesting stuff. We keep preSamples before the
+        first value over our threshold value, and postSamples after the
+        last
         """
+        startIndex = None
+        endIndex = None
+        cuts = []
 
-    def integrate_():
+        # loop through all the values
+        for index, val in enumerate(trace):
+            if (val > self.chopThreshold):
+                # for something over our threshold, make an endIndex
+                endIndex = index + self.nPostSamples
+
+                # make sure we don't get out of bounds errors
+                if (endIndex >= len(trace)):
+                    cuts.append(len(trace))
+                else:
+                    cuts.append(endIndex)
+
+                # if this is the first threshold passer, get the startIndex
+                if (startIndex is None):
+                    if(index - self.nPreSamples > 0):
+                        startIndex = index - self.nPreSamples
+                    else:
+                        startIndex = 0
+
+        # we only care about the endcaps, we have only one start value, but a
+        # list of endIndex vales. But we only want the very last one in that
+        # list
+        return times[startIndex:cuts[-1]], trace[startIndex:cuts[-1]]
+
+    def scaleADC_(self, trace):
         """
-
+        This just shifts all the trace by the pedestal
+        value, to make the y axis scale a little more realistic. For
+        right now, the pedestal value is just made randomly. As far as
+        I know there is no fcl file with the pedestal values for each
+        crystal, but if there are that would be better.
         """
+        self.pedestal = np.random.normal(loc=1750, scale=2.5) * (-1)
 
-    def __init__(self, caloNum, x, y, xtalNum):
+        if(self.verbosity):
+            print("The pedestal value of this crystal is " +
+                  "{0:.2f}".format(self.pedestal))
+
+        return (trace + self.pedestal)
+
+    def integrate_(self, time, trace):
+        """
+        Returns the integral of the trace, the area under the curve
+        """
+        return (np.sum(trace) * (time[1]-time[0]))
+
+    def __init__(self, caloNum, x, y, xtalNum, normalize, chopThreshold,
+                 nPreSamples, nPostSamples, noise, randomizeTailLength,
+                 nTailSamples, samplingRateArtificial, pedestal, doChop,
+                 verbosity):
         """
         caloNum : [int] the number of the calorimeter where this crystal lives
 
@@ -185,12 +373,42 @@ class Xtal:
         self.y = y
         self.xtalNum = xtalNum
         self.impacts = []
+        self.normalize = normalize
+        self.chopThreshold = chopThreshold
+        self.nPreSamples = nPreSamples
+        self.nPostSamples = nPostSamples
+        self.noise = noise
+        self.randomizeTailLength = randomizeTailLength
+        self.nTailSamples = nTailSamples
+        self.samplingRateArtificial = samplingRateArtificial
+        self.pedestal = pedestal
+        self.doChop = doChop
+        self.verbosity = verbosity
+
+        self.time = []
+        self.trace = []
+        self.choppedTime = []
+        self.choppedTrace = []
+
+        # separated pulse traces, for debugging
+        self.pulses = []
+
+        self.integral = None
+
+        self.noiseLevel = \
+            fclParse.fclReader("gm2pedestals_run3formatRE.fcl")[
+                               'pedestalConstantsLaserRun3']['calo15'][
+                               'xtal' + xtalNum]['noiseLevel']
 
         self.energyCalibrationVal = \
             fclParse.fclReader("mipEnergyCalibration_" +
                                "PostDisk_CoincidencNumber_2.fcl")[
                                'absolute_calibration_constants'][
                                'calo'+str(caloNum)]['xtal'+str(xtalNum)]
+
+        f = r.TFile("./calotemplate15.root")
+        self.template = Spline(rspline=f.Get("masterSpline_xtal"+self.xtalNum),
+                               xtalNum=self.xtalNum, caloNum=self.caloNum)
 
 
 class Calorimeter:
