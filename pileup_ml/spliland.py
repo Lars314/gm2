@@ -331,10 +331,9 @@ class Island:
     def giveEnergyScaleFactors_(self, verbosity, energyPeak,
                                 energyScale, calibConstant):
         """
-        Gives the energy scale factors according to the energy disctribution
-        of the real world data. This is a gaussian distribution centered at
-        zero. Only positive values are taken. Values below a certain
-        threshold of around 50 MeV are ignored
+        Gives the energy scale factors. This is a gaussian distribution
+        centered at zero. Only positive values are taken. Values below a
+        certain threshold of around 50 MeV are ignored
 
         First an energy value in MeV is given. Because energy is directly
         proportional to the pulse integral, which is directly proportional
@@ -343,35 +342,6 @@ class Island:
         between height and energy for some other pulse of the same shape. We
         choose this to be this template pulse, but of height one, which makes
         the calculation easy.
-
-        An older, redundant method is as follows. I am only keeping it for
-        when I inevitably confuse myself and need to re-read it to understand.
-
-        170 MeV = calibration constant * pulse integral, by definition
-        calibIntegral = 170 / calibConstant
-
-        Energy is directly proportional to integral,
-        is directly proportional to height
-        calibHeight / calibIntegral = normalHeight / normalIntegral
-        normalHeight == 1, by definition
-        calibHeight = calibIntegral / normalIntegral
-
-        Energy is directly proportional to integral,
-        is directly proportional to height
-        thisHeight / calibHeight = thisEenrgy / calibEnergy
-        calibEnergy == 170 by definition
-        thisHeight = (thisEnergy *calibHeight) / (170)
-
-        calibHeight = calibIntegral / normalIntegral, from earlier
-        thisHeight = (thisEnergy*calibIntegral/NormalIntegral) / (170)
-
-        calibIntegral = 170 / calibConstant, from earlier
-        thisHeight = (thisEnergy*(170 / calibConstant)/normalIntegral) / (170)
-        thisHeight = thisEnergy / (calibConstant * normalIntegral)
-
-        Energy is directly proportional to integral,
-        is directly proportional to height
-        thisHeight / normalHeight = thisEnergy / normalEnergy
         """
 
         factors = []

@@ -14,6 +14,7 @@ import numpy as np
 import fclParse
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import matplotlib.pylab as pylab
 import ROOT as r
 
 
@@ -22,6 +23,7 @@ class Spline:
     Take a root spline and make a simple,
     pythonified object with two np arrays.
 
+    A better name for this would be the template class
 
     ------------ Attributes ------------
 
@@ -45,6 +47,7 @@ class Spline:
         The idea is to have a time for the center of a pulse
         """
         index = np.argmax(self.trace)
+        # print(index)
         return(self.time[index])
 
     def getPeak(self):
@@ -171,6 +174,8 @@ class Xtal:
         """Now we can put the pulses together"""
 
         templateShape = self.template.trace / self.template.getPeak()
+        # templatePeakTime = self.template.peakTime()
+        # print(templatePeakTime)
         emptyTrace = thisTrace.copy()
 
         pulses = []
@@ -179,7 +184,8 @@ class Xtal:
             energy = event[1]
             height = self.convertToADC_(energy)
 
-            sample_offset = int(np.floor(deltaT))     # redundant?
+            sample_offset = int(deltaT)  # / self.template.samplingRate)
+            # print(sample_offset)
             splineI = np.interp(templateTimes + deltaT - sample_offset,
                                 templateTimes, templateShape) * height
 
@@ -347,6 +353,8 @@ class Xtal:
         crystal, but if there are that would be better.
         """
         self.pedestal = np.random.normal(loc=1750, scale=2.5) * (-1)
+        # correct the chopThreshold too
+        self.chopThreshold += self.pedestal
 
         if(self.verbosity):
             print("The pedestal value of this crystal is " +
@@ -429,6 +437,10 @@ class Xtal:
                                              str(self.xtalNum)),
                                xtalNum=self.xtalNum, caloNum=self.caloNum)
 
+        def __repr__(self):
+            summary = ""
+            return summary
+
 
 class Calorimeter:
     """
@@ -492,7 +504,7 @@ class Calorimeter:
 
     def draw(self, legend=False, show_moliere_radius=False,
              show_hit_xtals=False, show_xtal_energies=False,
-             show_xtal_num=False, show_traces=False):
+             show_xtal_num=False, show_traces=False, energy_cmap=False):
         """
         Give a matplotlib representation of this calorimeter, and show where
         the particles are, as well as their energies. This function is for
@@ -507,8 +519,18 @@ class Calorimeter:
         for y in range(1, 6):
             ax.axhline(y=y, xmin=0, xmax=9, color='xkcd:grey')
 
+        # every bin is 10 MeV
+        colors = pylab.cm.viridis(np.linspace(0, 1, 100))
+
         for impact in self.impacts:
-            this_color = next(ax._get_lines.prop_cycler)['color']
+            if (energy_cmap):
+                color_index = impact["energy"] // 50
+                if (color_index >= 100):
+                    color_index = 99
+                this_color = colors[color_index]
+            else:
+                this_color = next(ax._get_lines.prop_cycler)['color']
+
             ax.plot(impact["x"], impact["y"],
                     marker='o', markersize=10, color=this_color,
                     label="{0:.2f} MeV {1:.2f} ns".format(impact["energy"],
@@ -546,16 +568,28 @@ class Calorimeter:
                     ax.text(x=xtal[0]+0.1, y=xtal[1],
                             s=energy_string)
 
-            if (show_traces):
-                # loop over columns
-                for i in range(0, len(self.xtalGrid)):
-                    # loop over rows
-                    for j in range(0, len(self.xtalGrid[i])):
-                        continue
-
             if (show_moliere_radius):
                 ax.add_artist(moliere_circle)
                 ax.add_artist(moliere_circle_2)
+
+        if (show_traces):
+            # loop over columns
+            for i in range(0, len(self.xtalGrid)):
+                # loop over rows
+                for j in range(0, len(self.xtalGrid[i])):
+                    if (self.xtalGrid[i][j].trace is not []):
+                        axin = ax.inset_axes([i/9, j/6, 1/9, 1/6])
+                        axin.plot(self.xtalGrid[i][j].choppedTrace)
+                        axin.get_xaxis().set_ticks([])
+                        axin.get_yaxis().set_ticks([])
+                        axin.patch.set_alpha(0)
+
+                        # we need to make sure they are put on the same
+                        # scale
+                        if (self.normalize):
+                            axin.set_ylim(-0.1, 0.8)
+                        else:
+                            axin.set_ylim(-2000, 200)
 
         ax.set_xlim(0, 9)
         ax.set_ylim(0, 6)
@@ -571,7 +605,7 @@ class Calorimeter:
         The energy density of the impacted particle over the region of impact.
         This will change, 1/r is definitely not right but easy for testing
         """
-        return 1 / (1 + 4 * np.pi * r**2)
+        return 1 / (2 + 4 * np.pi * r**2)
 
     def get_hit_crystals_(self):
         """
