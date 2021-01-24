@@ -997,7 +997,8 @@ class Particle:
                 if (config['verbosity']):
                     print("No particle energy provided, " +
                           "defaulting to energy of 3.094 GeV")
-                self.energy = 3094
+                # self.energy = 3094
+                self.energy = np.random.randint(low=200, high=4000)
             else:
                 index = np.random.randint(low=0, high=len(e_df))
                 self.energy = e_df[index]
