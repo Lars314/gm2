@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.pylab as pylab
 import ROOT as r
+import pandas as pd
 
 import json
 
@@ -909,8 +910,10 @@ class Island:
         self.calo = Calorimeter(caloNum)
 
         # particles impact the calorimeter
+        self.energies_list = []
         for particle in self.particles:
             self.calo.impact(particle)
+            self.energies_list.append(particle.energy)
 
         # get the crystals from the calorimeter, save positions and traces
         self.calo.build()
@@ -932,6 +935,15 @@ class Island:
                 else:
                     # if the trace is empty, add 404 zeros
                     self.island_trace += [0] * 404
+
+        self.df = pd.DataFrame(columns=['trace', 'nParticles', 'energies'])
+        self.df['trace'] = self.df['trace'].astype('object')
+        self.df['energies'] = self.df['energies'].astype('object')
+
+        self.df.at[0, 'trace'] = self.island_trace
+        self.df.at[0, 'nParticles'] = self.nParticles
+        self.df.at[0, 'energies'] = self.energies_list
+
 
     def __repr__(self):
         summary = "----- New Island -----\n"

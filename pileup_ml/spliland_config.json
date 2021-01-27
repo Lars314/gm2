@@ -18,8 +18,9 @@
     "maxPulses":4,
     "deltaTmin":0,
     "deltaTmax":25,
-    "minTimeOffset":0,
+    "minTimeOffset":4,
     "maxTimeOffset":null,
     "gainSag":null,
-    "traceLen":404
+    "traceLen":404,
+    "minR":2
 }

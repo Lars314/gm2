@@ -1,6 +1,5 @@
 *.root
 *.data
-*.png
 *.so
 *.gif
 *.joblib
