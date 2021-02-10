@@ -4,4 +4,8 @@
 *.gif
 *.joblib
 pileup_ml/tempate_data/
+pileup_ml/template_data_v2/
+pileup_ml/template_data_v3/
+y_position/earlyPosition/data/
+y_position/generalYPosition/data/
 y_position/YMeanSummaries/better data/
