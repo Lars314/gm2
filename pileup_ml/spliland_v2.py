@@ -108,8 +108,8 @@ class Spline:
                 trace.append(rSpline.Eval(i))
                 times.append(i)
 
-            self.trace = np.array(trace)
-            self.time = np.array(times)
+            self.trace = trace
+            self.time = times
 
             self.samplingRate = times[2] - times[1]
 
@@ -155,7 +155,7 @@ class Xtal:
 
         """randomize the length of the tail samples"""
 
-        if(self.randomizeTailLength):
+        if(config['randomizeTailLength']):
             self.nTailSamples = self.giveRandomTailLength_()
 
         # before putting pulses in, trace values are just zero
@@ -172,7 +172,7 @@ class Xtal:
         # the time array is the original one, plus however much else we want
         # based on nTailSamples
         theseTimes = np.append(templateTimes,
-                               np.array([templateTimes[templateTimes.size-1] +
+                               np.array([templateTimes[len(templateTimes)-1] +
                                          templateSamplingRate*i
                                          for i in range(1,
                                                         self.nTailSamples+1)]))
@@ -222,7 +222,7 @@ class Xtal:
 
         """normalize if needed"""
 
-        if (config['normalize']):
+        if (config['normalizeXtal']):
             # if we are normalizing, our chopping threshold needs to match
             # our normalization
             thisTrace /= self.integral
@@ -235,12 +235,54 @@ class Xtal:
 
         """now we're done!"""
         self.time = theseTimes
-        self.trace = thisTrace
+        self.trace = thisTrace.tolist()
 
-        """simulate island chopping, cut to around the pulses"""
-        if (self.doChop):
-            self.choppedTime, self.choppedTrace = self.chop_(theseTimes,
-                                                             thisTrace)
+    def do_chop(self, startIndex, endIndex):
+        """
+        Performs chopping with the indices found at the calo level
+        """
+        # first, we need to make sure that the end index is smaller than the
+        # length of the trace to avoid out of bounds errors. Within an island,
+        # it is important that each trace is the same length. Padding happens
+        # at the dataset level later.
+        if (self.trace):
+            if (endIndex > len(self.trace)):
+                self.choppedTrace = self.trace[startIndex:]
+                self.choppedTrace.append(
+                    np.zeros(endIndex-len(self.trace)).tolist())
+            else:
+                self.choppedTrace = self.trace[startIndex:endIndex]
+        else:
+            self.choppedTrace = []
+
+    def find_chop_indices(self):
+        """
+        goes through the trace and gives chop index recommendation based on
+        this crystal and the config thresholds
+        """
+        startIndex = None
+        endIndex = None
+
+        # loop through all the values
+        for index, val in enumerate(self.trace):
+            if (val > self.chopThreshold):
+                # for something over our threshold, make an endIndex
+                endIndex = index + config['nPostSamples']
+
+                # make sure we don't get out of bounds errors
+                # if we are already at the end of the trace, we can end here
+                if (endIndex >= len(self.trace)):
+                    endIndex = len(self.trace)
+                    break
+
+                # if this is the first threshold passer, get the startIndex
+                if (startIndex is None):
+                    if(index - config['nPreSamples'] > 0):
+                        startIndex = index - config['nPreSamples']
+                    else:
+                        startIndex = 0
+
+        return startIndex, endIndex
 
 # -----------------------------------------------------------------------------
 # ----------------------------- Private Functions -----------------------------
@@ -251,27 +293,28 @@ class Xtal:
         convert the time sampling to match that of the ADC
         by default this should be 1.25ns sampling
         """
-        if (self.samplingRateArtificial is None):
+        if (config['samplingRateArtificial'] is None):
             return thisTrace, theseTimes
 
-        assert type(self.samplingRateArtificial) is float, print(
+        assert type(config['samplingRateArtificial']) is float, print(
             """Error: Sampling rate must be a float.
-            Currently {0}""".format(type(self.samplingRateArtificial))
+            Currently {0}""".format(type(config['samplingRateArtificial']))
         )
 
         if (verbosity):
             print("Sampling this trace with a deltaT of " +
-                  "{0:.2f} ns".format(self.samplingRateArtificial))
+                  "{0:.2f} ns".format(config['samplingRateArtificial']))
 
         sampledTimes = [theseTimes[0]]
 
         while(sampledTimes[-1] < [theseTimes[-1]]):
-            sampledTimes.append(sampledTimes[-1] + self.samplingRateArtificial)
+            sampledTimes.append(sampledTimes[-1] +
+                                config['samplingRateArtificial'])
 
         theseSamples = np.interp(sampledTimes, theseTimes, thisTrace)
 
-        thisTrace = np.array(theseSamples)
-        theseTimes = np.array(sampledTimes)
+        thisTrace = theseSamples
+        theseTimes = sampledTimes
 
         return thisTrace, theseTimes
 
@@ -314,54 +357,6 @@ class Xtal:
         self.impacts = []
         self.trace = []
         self.time = []
-
-    def chop_(self, times, trace):
-        """
-        Performs simulated island chopping. We don't want a bunch of zero
-        values if we have many many data, so we cut islands
-        down to just the interesting stuff. We keep preSamples before the
-        first value over our threshold value, and postSamples after the
-        last
-        """
-        startIndex = None
-        endIndex = None
-        cuts = []
-
-        # loop through all the values
-        for index, val in enumerate(trace):
-            if (val > self.chopThreshold):
-                # for something over our threshold, make an endIndex
-                endIndex = index + self.nPostSamples
-
-                # make sure we don't get out of bounds errors
-                if (endIndex >= len(trace)):
-                    cuts.append(len(trace))
-                else:
-                    cuts.append(endIndex)
-
-                # if this is the first threshold passer, get the startIndex
-                if (startIndex is None):
-                    if(index - self.nPreSamples > 0):
-                        startIndex = index - self.nPreSamples
-                    else:
-                        startIndex = 0
-
-        if (self.verbosity):
-            print("This trace was chopped with threshold " +
-                  "{0:.2f}\n".format(self.chopThreshold) +
-                  "and with chop indices {0}".format(startIndex) +
-                  " and {0}".format(cuts[-1]))
-
-        # we only care about the endcaps, we have only one start value, but a
-        # list of endIndex vales. But we only want the very last one in that
-        # list
-        try:
-            return times[startIndex:cuts[-1]], trace[startIndex:cuts[-1]]
-        except(IndexError):
-            # this means no end cut was found ever, so no value over the
-            # threshold exists. We don't want to keep this crystal
-            self.clear_()
-            return [], []
 
     def addPedestal_(self, trace):
         """
@@ -407,21 +402,14 @@ class Xtal:
         self.y = y
         self.xtalNum = xtalNum
         self.impacts = []
-        self.normalize = config['normalize']
-        self.nPreSamples = config['nPreSamples']
-        self.nPostSamples = config['nPostSamples']
         self.noise = config['noise']
-        self.randomizeTailLength = config['randomizeTailLength']
         self.nTailSamples = config['nTailSamples']
         self.samplingRateArtificial = config['samplingRateArtificial']
         self.pedestal = config['pedestal']
-        self.doChop = config['doChop']
         self.verbosity = config['verbosity']
 
         self.time = []
         self.trace = []
-        self.choppedTime = []
-        self.choppedTrace = []
 
         # separated pulse traces, for debugging
         self.pulses = []
@@ -478,7 +466,6 @@ class Calorimeter:
 # -----------------------------------------------------------------------------
 # ----------------------------- Public  Functions -----------------------------
 # -----------------------------------------------------------------------------
-
     def impact(self, p):
         """
         A positron hits. Send time and energy information to the crystals,
@@ -655,6 +642,41 @@ class Calorimeter:
 # -----------------------------------------------------------------------------
 # ----------------------------- Private Functions -----------------------------
 # -----------------------------------------------------------------------------
+    def chop_(self):
+        """
+        Performs simulated island chopping. We don't want a bunch of zero
+        values if we have many many data, so we cut islands
+        down to just the interesting stuff. We keep preSamples before the
+        first value over our threshold value, and postSamples after the
+        last
+        """
+        # we need to go through each crystal, find a start and end index.
+        # then we need to go through each index, find the extrema
+        # then we need to go back to each crystal, and use these indices
+        # to chop each crystal's trace to the same length
+        startIndices = []
+        endIndices = []
+
+        for column in self.xtalGrid:
+            for xtal in column:
+                this_start, this_end = xtal.find_chop_indices()
+                if ((this_start is None) or (this_end is None)):
+                    continue
+                startIndices.append(this_start)
+                endIndices.append(this_end)
+
+        # print(startIndices, endIndices)
+        the_start = min(startIndices)
+        # print(the_start)
+        the_end = max(endIndices)
+        # print(the_end)
+
+        self.chop_size = the_end - the_start
+
+        for column in self.xtalGrid:
+            for xtal in column:
+                xtal.do_chop(the_start, the_end)
+
     def get_energy_density_(self, r):
         """
         The energy density of the impacted particle over the region of impact.
@@ -772,6 +794,9 @@ class Calorimeter:
                     #         check_e_lim = True
                     # if (check_e_lim):
                     xtal.build_trace()
+
+        if (config['doChop']):
+            self.chop_()
 
     def reset_xtalGrid_(self):
         """
@@ -918,32 +943,53 @@ class Island:
         # get the crystals from the calorimeter, save positions and traces
         self.calo.build()
 
-        self.island_trace = []
-        for column in self.calo.xtalGrid:
-            for xtal in column:
-                # check the length of the trace
-                this_length = len(xtal.trace)
-                if (this_length):
-                    # if the trace is not empty, make sure the length is 404
-                    if (this_length > 404):
-                        break
-                    elif (this_length < 404):
-                        needed_vals = 404 - this_length
-                        self.island_trace += xtal.trace + ([0] * needed_vals)
+        if (config['gridFormat']):
+            self.island_trace = []
+            for c_index in range(0, len(self.calo.xtalGrid)):
+                self.island_trace.append([])
+                for r_index in range(0, len(self.calo.xtalGrid[c_index])):
+                    if(config['doChop']):
+                        this_ct = self.calo.xtalGrid[c_index][
+                            r_index].choppedTrace
+                        if (not this_ct):
+                            this_ct = np.zeros(self.calo.chop_size).tolist()
+                        self.island_trace[c_index].append(this_ct)
                     else:
-                        self.island_trace.extend(xtal.trace)
-                else:
-                    # if the trace is empty, add 404 zeros
-                    self.island_trace += [0] * 404
+                        self.island_trace[c_index].append(
+                            self.calo.xtalGrid[c_index][r_index].trace)
+            self.island_trace = np.array(self.island_trace)
+            self.saved_traces = np.reshape(self.island_trace,
+                                           (9, 6, self.calo.chop_size, 1))
+
+        else:
+            # just put it all in a row
+            self.island_trace = []
+            for column in self.calo.xtalGrid:
+                for xtal in column:
+                    # check the length of the trace
+                    this_length = len(xtal.trace)
+                    if (this_length):
+                        # if the trace is not empty, make sure the length=404
+                        if (this_length > 404):
+                            break
+                        elif (this_length < 404):
+                            needed_vals = 404 - this_length
+                            self.island_trace += xtal.trace +\
+                                ([0] * needed_vals)
+                        else:
+                            self.island_trace.extend(xtal.trace)
+                    else:
+                        # if the trace is empty, add 404 zeros
+                        self.island_trace += [0] * 404
+            self.saved_traces = self.island_trace
 
         self.df = pd.DataFrame(columns=['trace', 'nParticles', 'energies'])
         self.df['trace'] = self.df['trace'].astype('object')
         self.df['energies'] = self.df['energies'].astype('object')
 
-        self.df.at[0, 'trace'] = self.island_trace
+        self.df.at[0, 'trace'] = self.saved_traces
         self.df.at[0, 'nParticles'] = self.nParticles
         self.df.at[0, 'energies'] = self.energies_list
-
 
     def __repr__(self):
         summary = "----- New Island -----\n"
@@ -1010,7 +1056,8 @@ class Particle:
                     print("No particle energy provided, " +
                           "defaulting to energy of 3.094 GeV")
                 # self.energy = 3094
-                self.energy = np.random.randint(low=200, high=4000)
+                self.energy = np.random.randint(low=config['eLow'],
+                                                high=config['eHigh'])
             else:
                 index = np.random.randint(low=0, high=len(e_df))
                 self.energy = e_df[index]

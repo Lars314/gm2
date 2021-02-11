@@ -1,0 +1,7 @@
+{
+    "doUnrandomized":false,
+    "doRandomized":true,
+    "step":10,
+    "outputDirectory":"./output/",
+    "fitLimits":[30, 200]
+}

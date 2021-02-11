@@ -1,5 +1,6 @@
 {
     "normalize":false,
+    "normalizeXtal":false,
     "chopThreshold":50,
     "nPreSamples":8,
     "nPostSamples":18,
@@ -22,5 +23,8 @@
     "maxTimeOffset":null,
     "gainSag":null,
     "traceLen":404,
-    "minR":2
+    "minR":2,
+    "gridFormat":true,
+    "eLow":300,
+    "eHigh":4000
 }
